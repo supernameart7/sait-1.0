@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Magic Chromo Words — Where Names Become Symbols</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&family=Montserrat&family=Bebas+Neue&family=Oswald&family=Poppins&family=Raleway&family=Playfair+Display&family=Cinzel&family=Great+Vibes&family=Allura&family=Pacifico&family=Lobster&family=Dancing+Script&family=Bungee&family=Orbitron&family=Audiowide&family=Black+Ops+One&family=Permanent+Marker&family=Fredoka&family=Luckiest+Guy&display=swap" rel="stylesheet">
+<script src="https://www.paypal.com/sdk/js?client-id=Ae_WAUI5aohgq5Sz8uSWV1YMWfpJmYoZrI61lj0qcz-W_DupbQ0ca1Rx3z41gD8S-t73zya6bILE9IsO&currency=USD"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --r: #FF4040; --o: #FF8C00; --y: #FFD700;
+  --g: #3CB371; --b: #1E90FF; --i: #6A0DAD; --v: #EE82EE;
+  --ink: #0d0d0d;
+  --parchment: #f8f4ee;
+  --pale: #ede8e0;
+  --deep: #1a1612;
+  --muted: #7a7060;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --mono: 'Space Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+.rainbow-bar {
+  height: 5px;
+  background: linear-gradient(90deg,
+    var(--r) 0%,var(--r) 14.3%,
+    var(--o) 14.3%,var(--o) 28.6%,
+    var(--y) 28.6%,var(--y) 42.9%,
+    var(--g) 42.9%,var(--g) 57.1%,
+    var(--b) 57.1%,var(--b) 71.4%,
+    var(--i) 71.4%,var(--i) 85.7%,
+    var(--v) 85.7%,var(--v) 100%);
+}
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(248,244,238,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #ddd6c8;
+  padding: 0 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px; gap: 1rem;
+}
+.nav-brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.nav-brand img { height: 28px; width: auto; }
+.nav-logo {
+  font-family: var(--serif);
+  font-size: clamp(0.65rem, 2.2vw, 1rem);
+  font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+  background: linear-gradient(90deg,var(--r),var(--o),var(--y),var(--g),var(--b),var(--i),var(--v));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  white-space: nowrap;
+}
+.nav-links { display: flex; gap: 1rem; list-style: none; flex-shrink: 0; }
+.nav-links a {
+  font-family: var(--mono); font-size: clamp(0.48rem, 1.3vw, 0.68rem);
+  text-decoration: none; color: var(--muted);
+  letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+
+/* HERO */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 6rem 1.5rem 4rem; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 30%, rgba(255,64,64,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 60%, rgba(30,144,255,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 50% 80%, rgba(106,13,173,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 2rem;
+  animation: fadeUp 1s ease both;
+}
+.hero-title {
+  font-family: var(--serif); font-size: clamp(2.8rem,8vw,7rem);
+  font-weight: 300; line-height: 1.05; letter-spacing: -0.02em;
+  margin-bottom: 1rem; animation: fadeUp 1s ease 0.1s both;
+}
+.hero-title .accent {
+  font-style: italic;
+  background: linear-gradient(120deg,var(--r) 0%,var(--o) 20%,var(--y) 40%,var(--g) 60%,var(--b) 80%,var(--v) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-brand-rainbow {
+  font-family: var(--serif); font-size: clamp(2rem,6vw,5rem);
+  font-weight: 300; font-style: italic; letter-spacing: 0.06em; margin-bottom: 2rem;
+  animation: fadeUp 1s ease 0.15s both;
+  background: linear-gradient(90deg,var(--r) 0%,var(--r) 14%,var(--o) 22%,var(--y) 36%,var(--g) 50%,var(--b) 64%,var(--i) 78%,var(--v) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-subtitle {
+  font-size: clamp(1rem,2.5vw,1.2rem); font-weight: 300; font-style: italic;
+  color: var(--muted); max-width: 520px; margin: 0 auto 2.5rem;
+  animation: fadeUp 1s ease 0.2s both;
+}
+.hero-tagline { font-size: 1rem; color: var(--muted); margin-bottom: 3rem; animation: fadeUp 1s ease 0.25s both; }
+.btn-primary {
+  display: inline-block; font-family: var(--mono); font-size: 0.7rem;
+  letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
+  color: var(--parchment); background: var(--ink); border: none;
+  padding: 0.9rem 2rem; cursor: pointer; transition: transform 0.2s, background 0.2s;
+  animation: fadeUp 1s ease 0.35s both;
+}
+.btn-primary:hover { background: #333; transform: translateY(-2px); }
+.btn-outline {
+  display: inline-block; font-family: var(--mono); font-size: 0.7rem;
+  letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
+  color: var(--ink); background: transparent; border: 1px solid var(--ink);
+  padding: 0.9rem 2rem; cursor: pointer; transition: transform 0.2s, background 0.2s, color 0.2s;
+}
+.btn-outline:hover { background: var(--ink); color: var(--parchment); transform: translateY(-2px); }
+.prism-wrap { margin: 3rem auto 0; width: 100%; max-width: 380px; opacity: 0.85; animation: fadeUp 1.2s ease 0.5s both; }
+.divider { width: 60px; height: 1px; background: var(--muted); margin: 0 auto; opacity: 0.4; }
+
+section { max-width: 900px; margin: 0 auto; padding: 5rem 1.5rem; }
+section.full { max-width: 100%; padding: 0; }
+
+.section-label {
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 1.2rem;
+}
+h2 { font-family: var(--serif); font-size: clamp(1.8rem,4vw,3.2rem); font-weight: 300; line-height: 1.15; margin-bottom: 1.5rem; }
+h2 em { font-style: italic; }
+
+/* COLORS */
+.color-poem p { font-size: 1.1rem; line-height: 2.1; font-weight: 300; color: rgba(248,244,238,0.8); font-style: italic; }
+.color-poem p.highlight { font-size: 1.35rem; font-weight: 400; font-style: normal; color: var(--parchment); margin: 2rem 0 0.5rem; }
+.rainbow-spectrum { display: flex; height: 3px; width: 100%; max-width: 400px; margin: 3rem auto 0; gap: 4px; }
+.rainbow-spectrum span { flex: 1; border-radius: 2px; }
+.eyes-row {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem;
+  margin: 3.5rem auto 0; text-align: left; max-width: 700px;
+}
+.eye-card { padding: 1.25rem; border: 1px solid rgba(248,244,238,0.12); }
+.eye-card .eye-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.eye-card .eye-who { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(248,244,238,0.45); margin-bottom: 0.3rem; }
+.eye-card .eye-see { font-style: italic; font-size: 1rem; color: rgba(248,244,238,0.85); }
+
+/* WORLD */
+.world-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.world-block { margin-bottom: 1.5rem; }
+.world-block-title { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+.world-block-sep { font-family: var(--mono); font-size: 0.7rem; color: #bbb0a0; margin: 1.2rem 0; }
+.world-block p { font-size: 0.95rem; color: var(--muted); line-height: 1.9; margin-bottom: 0.4rem; }
+.world-block p strong { color: var(--ink); font-weight: 600; }
+.countdown-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin: 2rem 0; }
+.count-cell { background: var(--parchment); border: 1px solid #ddd6c8; padding: 1.2rem 1rem; text-align: center; }
+.count-num { font-family: var(--mono); font-size: 2rem; font-weight: 700; display: block; color: var(--ink); line-height: 1; }
+.count-label { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 0.4rem; display: block; }
+.winner-card { background: var(--parchment); border: 1px solid #ddd6c8; padding: 1.5rem; margin-top: 1rem; }
+.winner-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+.winner-name { font-size: 1.6rem; font-style: italic; font-weight: 300; }
+.winner-badge { display: inline-block; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; background: var(--g); color: white; padding: 0.2rem 0.6rem; margin-top: 0.5rem; }
+.archive-list { list-style: none; margin-top: 1.5rem; }
+.archive-list li { padding: 0.7rem 0; border-bottom: 1px solid #ddd6c8; font-family: var(--mono); font-size: 0.7rem; color: var(--muted); display: flex; justify-content: space-between; align-items: center; }
+.archive-list li:last-child { border-bottom: none; }
+.archive-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; margin-right: 0.6rem; }
+
+/* ORDER — distinct dark parchment bg */
+#order-section { background: #1e1b16; }
+.order-inner { max-width: 1100px; margin: 0 auto; padding: 5rem 1.5rem; }
+.order-heading-rainbow {
+  font-family: var(--serif); font-size: clamp(2.2rem,5vw,4rem);
+  font-weight: 300; font-style: italic; line-height: 1.1;
+  background: linear-gradient(120deg,var(--r) 0%,var(--o) 20%,var(--y) 40%,var(--g) 60%,var(--b) 80%,var(--v) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 1rem; text-align: center;
+}
+.order-intro-text { text-align: center; color: rgba(248,244,238,0.65); font-size: clamp(1rem,2vw,1.2rem); max-width: 600px; margin: 0 auto 3rem; line-height: 1.8; }
+.order-section-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(248,244,238,0.35); display: block; margin-bottom: 1.2rem; text-align: center; }
+
+.order-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; align-items: stretch; }
+.order-card {
+  background: #2a251e; border: 1px solid #3a3226;
+  padding: 2rem 1.5rem; display: flex; flex-direction: column;
+}
+.order-card.featured { border: 1px solid rgba(255,215,0,0.4); }
+.order-level { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(248,244,238,0.35); margin-bottom: 0.3rem; }
+.order-title { font-size: 1.4rem; font-style: italic; font-weight: 400; color: var(--parchment); margin-bottom: 1.4rem; }
+.order-field-label { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(248,244,238,0.45); display: block; margin-bottom: 0.4rem; margin-top: 1rem; }
+.order-input, .order-select {
+  width: 100%; font-family: var(--serif); font-size: 1rem;
+  padding: 0.6rem 0.7rem; border: 1px solid #3a3226;
+  background: #1a1612; color: var(--parchment);
+}
+.order-select option { background: #1a1612; color: var(--parchment); }
+.font-preview {
+  margin-top: 0.6rem; padding: 0.8rem; border: 1px solid #3a3226;
+  background: #1a1612; font-size: 1.3rem; text-align: center;
+  min-height: 2.6rem; display: flex; align-items: center; justify-content: center;
+  word-break: break-word; color: var(--parchment);
+}
+
+/* Background color picker - improved */
+.bgcolor-row { display: flex; align-items: center; gap: 10px; margin-top: 0.6rem; }
+.bgcolor-swatch {
+  width: 38px; height: 38px; border: 2px solid #3a3226; cursor: pointer;
+  flex-shrink: 0; transition: transform 0.1s; border-radius: 2px;
+}
+.bgcolor-swatch:hover { transform: scale(1.1); }
+.bgcolor-hex { font-family: var(--mono); font-size: 0.7rem; color: rgba(248,244,238,0.6); }
+.bgcolor-input-hidden { position: absolute; opacity: 0; pointer-events: none; width: 1px; height: 1px; }
+
+.letter-colors { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.6rem; }
+.letter-color-item { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.letter-color-item span { font-family: var(--mono); font-size: 0.58rem; color: rgba(248,244,238,0.5); }
+.letter-color-item input[type="color"] { width: 28px; height: 28px; padding: 0; border: 1px solid #3a3226; cursor: pointer; background: none; border-radius: 2px; }
+
+.order-includes { margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid #3a3226; font-size: 0.85rem; color: rgba(248,244,238,0.55); }
+.order-includes .determines-title, .order-includes .includes-title { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(248,244,238,0.7); margin-bottom: 0.5rem; margin-top: 1rem; }
+.order-includes ul { list-style: none; margin-bottom: 0.3rem; }
+.order-includes ul li { padding: 0.15rem 0; }
+.order-price { font-family: var(--mono); font-size: 2rem; font-weight: 700; text-align: center; margin: 1.4rem 0 0.8rem; color: var(--parchment); }
+.order-price span { font-size: 1rem; color: rgba(248,244,238,0.45); font-weight: 400; }
+.order-status { font-family: var(--mono); font-size: 0.62rem; text-align: center; margin-top: 0.6rem; color: var(--g); min-height: 1.2rem; }
+.paypal-btn-wrap { margin-top: 0.5rem; }
+
+/* Gallery */
+.gallery-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1rem; margin-top: 3rem; }
+.gallery-tile { aspect-ratio: 1; background: #2a251e; border: 1px solid #3a3226; overflow: hidden; position: relative; }
+.gallery-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; color: rgba(248,244,238,0.6); background: rgba(26,22,18,0.8); padding: 0.3rem; }
+.order-notes { margin-top: 3rem; text-align: center; color: rgba(248,244,238,0.5); font-size: 0.85rem; line-height: 1.9; max-width: 640px; margin-left: auto; margin-right: auto; }
+.order-notes strong { color: var(--parchment); }
+.order-notes .copyright { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.06em; margin-top: 1.2rem; color: rgba(248,244,238,0.3); }
+
+/* BOOK */
+#book { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: center; }
+.book-visual img { width: 100%; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.book-accordion { margin-top: 2rem; }
+.book-accordion details { margin-bottom: 1rem; border-bottom: 1px solid #ddd6c8; padding-bottom: 0.5rem; }
+.book-accordion summary { font-size: 1.1rem; font-weight: 600; font-style: italic; cursor: pointer; margin-bottom: 0.5rem; outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+.book-accordion summary::-webkit-details-marker { display: none; }
+.book-accordion summary::after { content: '+'; font-family: var(--mono); font-size: 1.2rem; color: var(--muted); }
+.book-accordion details[open] summary::after { content: '−'; }
+.book-accordion .accordion-content { padding: 1rem 0; }
+.book-accordion .accordion-content img { width: 100%; max-width: 400px; display: block; margin-bottom: 1rem; border-radius: 4px; border: 1px solid #ddd6c8; }
+.book-copyright { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.06em; color: #a89e8e; margin-top: 1.5rem; }
+
+/* STORE */
+.store-inner { max-width: 900px; margin: 0 auto; }
+.products-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1rem; margin-top: 2.5rem; }
+.product-card { border: 1px solid rgba(248,244,238,0.12); padding: 1.5rem 1rem; text-align: center; transition: border-color 0.2s, transform 0.2s; }
+.product-card:hover { border-color: rgba(248,244,238,0.3); transform: translateY(-3px); }
+.product-icon { font-size: 2rem; margin-bottom: 0.6rem; }
+.product-name { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(248,244,238,0.6); }
+.store-copyright { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.06em; color: rgba(248,244,238,0.25); margin-top: 2rem; }
+
+/* NFT */
+#nft { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center; }
+.nft-visual { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.nft-tile { aspect-ratio: 1; background: #fff; overflow: hidden; position: relative; border: 1px solid #eee; }
+.nft-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* SOCIAL */
+.social-inner { max-width: 600px; margin: 0 auto; }
+.social-sub { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 2.5rem; white-space: pre-line; }
+.social-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.8rem; }
+.social-pill { display: inline-block; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--ink); border: 1px solid #bbb0a0; padding: 0.5rem 1rem; transition: background 0.2s, color 0.2s; }
+.social-pill:hover { background: var(--ink); color: var(--parchment); border-color: var(--ink); }
+
+/* FOOTER */
+footer { background: var(--ink); color: rgba(248,244,238,0.5); text-align: center; padding: 3rem 1.5rem; }
+.footer-logo { font-size: 1.6rem; font-weight: 300; font-style: italic; color: var(--parchment); margin-bottom: 0.5rem; }
+.footer-tagline { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 2rem; }
+.footer-links { display: flex; justify-content: center; gap: 1.5rem; list-style: none; margin-bottom: 2rem; flex-wrap: wrap; }
+.footer-links a { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; color: rgba(248,244,238,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--parchment); }
+.footer-copy { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.08em; }
+.footer-main-copy { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; color: rgba(248,244,238,0.35); margin-top: 1.5rem; }
+
+/* FAQ PAGE overlay */
+.faq-overlay {
+  display: none; position: fixed; inset: 0; z-index: 500;
+  background: #050403; overflow-y: auto;
+}
+.faq-overlay.active { display: block; }
+.faq-inner { max-width: 820px; margin: 0 auto; padding: 5rem 2rem 4rem; }
+.faq-close {
+  position: fixed; top: 1.2rem; right: 1.5rem;
+  font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(248,244,238,0.6); cursor: pointer; background: none; border: 1px solid rgba(248,244,238,0.25);
+  padding: 0.5rem 1rem; transition: color 0.2s, border-color 0.2s; z-index: 600;
+}
+.faq-close:hover { color: var(--parchment); border-color: rgba(248,244,238,0.7); }
+.faq-title { font-family: var(--serif); font-size: 2.4rem; font-weight: 300; font-style: italic; color: var(--parchment); margin-bottom: 3rem; }
+.faq-item { margin-bottom: 2.8rem; padding-bottom: 2.8rem; border-bottom: 1px solid rgba(248,244,238,0.1); }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; font-style: italic; color: var(--y); margin-bottom: 1.2rem; }
+.faq-en { margin-bottom: 1rem; }
+.faq-en .lang-flag { font-size: 0.9rem; margin-right: 0.4rem; }
+.faq-en p { font-size: 1.1rem; color: rgba(248,244,238,0.9); line-height: 1.9; }
+.faq-ru { margin-top: 0.6rem; }
+.faq-ru .lang-flag { font-size: 0.9rem; margin-right: 0.4rem; }
+.faq-ru p { font-size: 1rem; color: rgba(248,244,238,0.6); line-height: 1.9; font-style: italic; }
+
+/* product description */
+.product-desc {
+  font-family: var(--serif); font-size: 0.78rem; font-style: italic;
+  color: rgba(248,244,238,0.4); margin-top: 0.4rem; line-height: 1.4;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .order-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(3,1fr) !important; }
+  .world-inner { grid-template-columns: 1fr; gap: 2rem; }
+}
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  .world-inner, #book, #nft { grid-template-columns: 1fr; gap: 2rem; }
+  .eyes-row { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .products-grid { grid-template-columns: 1fr 1fr; }
+  .countdown-grid { grid-template-columns: 1fr 1fr 1fr; }
+  nav { padding: 0 0.8rem; gap: 0.4rem; height: 52px; }
+  .nav-links { gap: 0.5rem; }
+  .nav-links a { font-size: 0.48rem; }
+  .nav-logo { font-size: 0.6rem; }
+  .nav-brand img { height: 22px; }
+  #nft { grid-template-columns: 1fr; }
+  #nft .nft-visual { order: -1; }
+  .gallery-grid { grid-template-columns: repeat(2,1fr) !important; }
+  .hero { padding: 5rem 1rem 3rem; }
+  section { padding: 4rem 1rem; }
+  .order-inner { padding: 4rem 1rem; }
+  #book { gap: 2rem; }
+  .faq-inner { padding: 5rem 1.2rem 3rem; }
+  .faq-title { font-size: 1.8rem; }
+  .faq-q { font-size: 1.1rem; }
+  .faq-en p, .faq-ru p { font-size: 0.95rem; }
+  .btn-primary, .btn-outline { padding: 0.8rem 1.5rem; font-size: 0.65rem; }
+}
+@media (max-width: 480px) {
+  .nav-links li:nth-child(n+5) { display: none; }
+  .eyes-row { grid-template-columns: 1fr 1fr; }
+  .products-grid { grid-template-columns: 1fr 1fr; }
+  .prism-wrap { max-width: 280px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr !important; }
+  .nft-visual { grid-template-columns: 1fr 1fr 1fr; gap: 5px; }
+  .count-num { font-size: 1.6rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- FAQ OVERLAY -->
+<div class="faq-overlay" id="faq-overlay">
+  <div class="faq-inner">
+    <button class="faq-close" onclick="document.getElementById('faq-overlay').classList.remove('active')">✕ Close</button>
+    <div class="faq-title">FAQ · Terms · Common Questions</div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ Client is not satisfied with the result</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>Magic ChromoWords™ artworks are original artistic creations. Minor adjustments may be available, but complete redesigns are not included unless purchased separately.</p></div>
+      <div class="faq-ru"><span class="lang-flag">🇷🇺</span><p>Работы Magic ChromoWords™ являются авторскими художественными произведениями. Небольшие корректировки возможны, однако полная переработка работы не входит в стоимость заказа.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ Client changed their mind after work started</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>Once creative work has started, cancellations and refunds may not be available.</p></div>
+      <div class="faq-ru"><span class="lang-flag">🇷🇺</span><p>После начала творческой работы отмена заказа и возврат средств могут быть недоступны.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ Client wants to use the artwork for business</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>Commercial use requires a separate commercial license.</p></div>
+      <div class="faq-ru"><span class="lang-flag">🇷🇺</span><p>Для коммерческого использования требуется отдельная коммерческая лицензия.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ Client requests source files</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>Source files are not included unless specifically stated in the product description.</p></div>
+      <div class="faq-ru"><span class="lang-flag">🇷🇺</span><p>Исходные файлы не предоставляются, если это отдельно не указано в описании услуги.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ Client wants exclusive rights</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>Exclusive rights may be purchased through a separate agreement.</p></div>
+      <div class="faq-ru"><span class="lang-flag">🇷🇺</span><p>Эксклюзивные права могут быть приобретены по отдельному соглашению.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ Client specified a font not in the catalogue</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>Custom fonts may be approved individually and may require an additional fee.</p></div>
+      <div class="faq-ru"><span class="lang-flag">🇷🇺</span><p>Пользовательские шрифты рассматриваются индивидуально и могут потребовать дополнительной оплаты.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ Client specified colors that clash</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>The artist reserves the right to suggest adjustments that improve the visual quality of the artwork.</p></div>
+      <div class="faq-ru"><span class="lang-flag">🇷🇺</span><p>Автор оставляет за собой право предложить изменения для улучшения визуального качества работы.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ Client wants to specify exact letter placement</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>Requests involving custom positioning, structure, or detailed layout may be treated as a Custom Commission project.</p></div>
+      <div class="faq-ru"><span class="lang-flag">🇷🇺</span><p>Запросы на точное расположение букв, структуру или сложную композицию могут быть отнесены к категории индивидуального заказа (Custom Commission).</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ Client asks to reveal the full Magic ChromoWords™ method</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>The complete Magic ChromoWords™ methodology is not included with artwork purchases and remains protected intellectual property.</p></div>
+      <div class="faq-ru"><span class="lang-flag">🇷🇺</span><p>Полная методология Magic ChromoWords™ не входит в стоимость художественных работ и является защищённой интеллектуальной собственностью.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="rainbow-bar"></div>
+
+<nav>
+  <div class="nav-brand">
+    <img src="logo.png" alt="Logo">
+    <span class="nav-logo">Magic Chromo Words</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#order-section">Order</a></li>
+    <li><a href="#colors">Colors</a></li>
+    <li><a href="#world">World</a></li>
+    <li><a href="#book">Book</a></li>
+    <li><a href="#store">Store</a></li>
+    <li><a href="#nft">NFT</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">A symbolic world of color &amp; imagination</p>
+  <h1 class="hero-title">Where Names<br>Become <em class="accent">Symbols</em></h1>
+  <p class="hero-brand-rainbow">Magic Chromo Words</p>
+  <p class="hero-subtitle">A place for those who still believe in wonder.<br>For those who remember the beauty of a rainbow after the rain.</p>
+  <p class="hero-tagline">Color is a language of perception.</p>
+  <a href="#colors" class="btn-primary">Discover the Secret of the World</a>
+  <div class="prism-wrap">
+    <svg viewBox="0 0 380 140" xmlns="http://www.w3.org/2000/svg" width="100%">
+      <polygon points="190,18 310,122 70,122" fill="none" stroke="#ccc4b4" stroke-width="0.8"/>
+      <line x1="190" y1="18" x2="190" y2="2" stroke="#e0d8cc" stroke-width="1"/>
+      <line x1="70" y1="122" x2="20" y2="100" stroke="#FF4040" stroke-width="2.5" opacity="0.85"/>
+      <line x1="70" y1="122" x2="16" y2="107" stroke="#FF8C00" stroke-width="2.5" opacity="0.85"/>
+      <line x1="70" y1="122" x2="14" y2="115" stroke="#FFD700" stroke-width="2.5" opacity="0.85"/>
+      <line x1="70" y1="122" x2="14" y2="122" stroke="#3CB371" stroke-width="2.5" opacity="0.85"/>
+      <line x1="70" y1="122" x2="16" y2="129" stroke="#1E90FF" stroke-width="2.5" opacity="0.85"/>
+      <line x1="70" y1="122" x2="20" y2="136" stroke="#6A0DAD" stroke-width="2.5" opacity="0.85"/>
+      <line x1="70" y1="122" x2="26" y2="142" stroke="#EE82EE" stroke-width="2.5" opacity="0.85"/>
+      <text x="190" y="95" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="11" fill="#9a9080" font-style="italic" letter-spacing="1">Magic Chromo Words</text>
+    </svg>
+  </div>
+</div>
+
+<!-- COLORS -->
+<section id="colors" class="full">
+  <div style="background:var(--ink);color:var(--parchment);padding:5rem 1.5rem;">
+    <div style="max-width:640px;margin:0 auto;text-align:center;">
+      <span class="section-label" style="color:rgba(248,244,238,0.4);">The Colors of Magic Chromo Words</span>
+      <h2 style="color:var(--parchment);">Before symbols,<br><em>there was light.</em></h2>
+      <div class="color-poem">
+        <p>A rainbow is one of nature's oldest wonders.</p>
+        <p class="highlight">We did not create colors.</p>
+        <p>We simply learn to see them,<br>feel them,<br>and tell stories through them.</p>
+      </div>
+      <div class="rainbow-spectrum" style="margin-top:2.5rem;">
+        <span style="background:#FF4040;"></span><span style="background:#FF8C00;"></span>
+        <span style="background:#FFD700;"></span><span style="background:#3CB371;"></span>
+        <span style="background:#1E90FF;"></span><span style="background:#6A0DAD;"></span>
+        <span style="background:#EE82EE;"></span>
+      </div>
+      <div class="eyes-row" style="margin-top:3rem;">
+        <div class="eye-card">
+          <div class="eye-icon">👁️</div>
+          <div class="eye-who">Children</div>
+          <div class="eye-see">See wonder.<br>See imagination.<br>See magic.</div>
+        </div>
+        <div class="eye-card">
+          <div class="eye-icon">🖌️</div>
+          <div class="eye-who">Artists</div>
+          <div class="eye-see">See inspiration.<br>See new forms.<br>See creativity.</div>
+        </div>
+        <div class="eye-card">
+          <div class="eye-icon">✨</div>
+          <div class="eye-who">Dreamers</div>
+          <div class="eye-see">See hope.<br>See possibilities.<br>See dreams.</div>
+        </div>
+        <div class="eye-card">
+          <div class="eye-icon">🔬</div>
+          <div class="eye-who">Scientists</div>
+          <div class="eye-see">See wonder.<br>See patterns.<br>See discovery.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORLD RESPONSE -->
+<section id="world" class="full">
+  <div style="background:var(--pale);padding:5rem 1.5rem;">
+    <div class="world-inner">
+      <div>
+        <span class="section-label">Monthly World Response</span>
+        <h2>Every 15th of the month at 3:15 p.m.<br><em>The symbolic world of Magic Chromo Words makes its choice.</em></h2>
+        <div class="world-block">
+          <div class="world-block-title">🌍 The World Grows</div>
+          <p>The Symbolic World is built by its residents.</p>
+          <p>Every follower,<br>every book,<br>every symbol,<br>every NFT,<br>every contribution</p>
+          <p>helps the World grow.</p>
+        </div>
+        <div class="world-block-sep">━━━━━━━━━━━━━━</div>
+        <div class="world-block">
+          <div class="world-block-title">🌟 The World Responds</div>
+          <p>Every month the World responds.</p>
+          <p>On the 15th day of each month, at 15:15,</p>
+          <p>one World Resident is randomly selected<br>to receive a <strong>50 USDT</strong> reward.</p>
+        </div>
+        <div class="world-block-sep">━━━━━━━━━━━━━━</div>
+        <div class="world-block">
+          <div class="world-block-title">✨ Connection &amp; Participation</div>
+          <p>Residents strengthen their connection to the Symbolic World through participation, activity, creativity, and support.</p>
+          <p>The stronger the connection,<br>the greater the resident's presence within the World.</p>
+        </div>
+        <div class="world-block-sep">━━━━━━━━━━━━━━</div>
+        <div class="world-block">
+          <div class="world-block-title">📋 Giveaway Rules</div>
+          <p><strong>Prize:</strong> 50 USDT</p>
+          <p><strong>Date:</strong> Every month on the 15th at 15:15 UTC</p>
+          <p><strong>Winner:</strong> Selected at random</p>
+          <p><strong>Entry:</strong> Free to participate</p>
+          <p><strong>Eligibility:</strong> Open worldwide</p>
+          <p><strong>Decision:</strong> Organizer's decision is final</p>
+          <p style="margin-top:0.6rem; font-size:0.8rem;">X, Instagram, Facebook and TikTok are not sponsors or organizers of this promotion.</p>
+        </div>
+        <div class="world-block-sep">━━━━━━━━━━━━━━</div>
+        <div class="world-block">
+          <p style="font-style:italic;font-size:1rem;color:var(--ink);">Together we build the World.</p>
+          <p style="font-style:italic;font-size:1rem;color:var(--ink);">The World remembers.</p>
+          <p style="font-style:italic;font-size:1rem;color:var(--ink);">The World responds.</p>
+        </div>
+        <div class="countdown-grid" id="countdown">
+          <div class="count-cell"><span class="count-num" id="c-days">15</span><span class="count-label">Days</span></div>
+          <div class="count-cell"><span class="count-num" id="c-hours">08</span><span class="count-label">Hours</span></div>
+          <div class="count-cell"><span class="count-num" id="c-mins">12</span><span class="count-label">Minutes</span></div>
+        </div>
+      </div>
+      <div>
+        <span class="section-label">World Archive</span>
+        <div class="winner-card">
+          <div class="winner-label">Latest Winner</div>
+          <div class="winner-name">Name / Symbol</div>
+          <div><span class="winner-badge">Reward Delivered ✔</span></div>
+        </div>
+        <ul class="archive-list">
+          <li><span><span class="archive-dot" style="background:#FF4040;"></span>Month 01</span><span style="font-size:0.58rem;color:var(--muted);">Completed</span></li>
+          <li><span><span class="archive-dot" style="background:#FF8C00;"></span>Month 02</span><span style="font-size:0.58rem;color:var(--muted);">Completed</span></li>
+          <li><span><span class="archive-dot" style="background:#3CB371;"></span>Month 03</span><span style="font-size:0.58rem;color:var(--muted);">Completed</span></li>
+          <li><span><span class="archive-dot" style="background:#1E90FF;"></span>Month 04</span><span style="font-size:0.58rem;color:var(--muted);">Completed</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER — dark distinct background -->
+<div id="order-section">
+  <div class="order-inner">
+    <span class="order-section-label">Commission Your Symbol</span>
+    <div class="order-heading-rainbow">Have your name<br>transformed into art.</div>
+    <p class="order-intro-text">
+      Choose a level of creative collaboration. Every Magic ChromoWords™ piece is hand-crafted by the artist and delivered directly to your inbox.
+    </p>
+
+    <div class="order-grid">
+      <!-- LEVEL I -->
+      <div class="order-card">
+        <div class="order-level">Level I</div>
+        <div class="order-title">Artist's Vision</div>
+        <label class="order-field-label">Word or Name</label>
+        <input type="text" class="order-input" id="l1-word" placeholder="e.g. Sophia" maxlength="20">
+        <label class="order-field-label">Your Email</label>
+        <input type="email" class="order-input" id="l1-email" placeholder="you@example.com">
+        <div class="order-includes">
+          <div class="determines-title">The Author Determines</div>
+          <ul><li>Font</li><li>Colors</li><li>Composition</li><li>Layout</li><li>Artistic Transformation</li></ul>
+          <div class="includes-title">Includes</div>
+          <ul><li>✅ 1 Final Artwork</li><li>✅ High Resolution File</li><li>✅ Magic ChromoWords™ Certificate</li></ul>
+        </div>
+        <div class="order-price">$14.99<span> USD</span></div>
+        <div class="paypal-btn-wrap" id="paypal-l1"></div>
+        <div class="order-status" id="status-l1"></div>
+      </div>
+
+      <!-- LEVEL II -->
+      <div class="order-card featured">
+        <div class="order-level">Level II</div>
+        <div class="order-title">Font Choice</div>
+        <label class="order-field-label">Word or Name</label>
+        <input type="text" class="order-input" id="l2-word" placeholder="e.g. Sophia" maxlength="20">
+        <label class="order-field-label">Choose a Font</label>
+        <select class="order-select" id="l2-font" onchange="updatePreview('l2')"></select>
+        <div class="font-preview" id="l2-preview">Magic ChromoWords</div>
+        <label class="order-field-label">Your Email</label>
+        <input type="email" class="order-input" id="l2-email" placeholder="you@example.com">
+        <div class="order-includes">
+          <div class="determines-title">The Author Determines</div>
+          <ul><li>Colors</li><li>Composition</li><li>Layout</li><li>Artistic Transformation</li></ul>
+          <div class="includes-title">Includes</div>
+          <ul><li>✅ 1 Final Artwork</li><li>✅ High Resolution File</li><li>✅ Magic ChromoWords™ Certificate</li></ul>
+        </div>
+        <div class="order-price">$24.99<span> USD</span></div>
+        <div class="paypal-btn-wrap" id="paypal-l2"></div>
+        <div class="order-status" id="status-l2"></div>
+      </div>
+
+      <!-- LEVEL III -->
+      <div class="order-card">
+        <div class="order-level">Level III</div>
+        <div class="order-title">Premium Collaboration</div>
+        <label class="order-field-label">Word or Name</label>
+        <input type="text" class="order-input" id="l3-word" placeholder="e.g. Sophia" maxlength="20" oninput="generateLetterColors()">
+        <label class="order-field-label">Choose a Font</label>
+        <select class="order-select" id="l3-font" onchange="updatePreview('l3')"></select>
+        <div class="font-preview" id="l3-preview">Magic ChromoWords</div>
+
+        <label class="order-field-label">Background Color</label>
+        <div class="bgcolor-row">
+          <div class="bgcolor-swatch" id="bgcolor-swatch" onclick="document.getElementById('l3-bgcolor').click()" style="background:#ffffff;"></div>
+          <span class="bgcolor-hex" id="bgcolor-hex">#ffffff</span>
+          <input type="color" class="bgcolor-input-hidden" id="l3-bgcolor" value="#ffffff" oninput="updateBgColor()">
+        </div>
+
+        <label class="order-field-label">Letter Colors (pick per letter)</label>
+        <div class="letter-colors" id="l3-letter-colors">
+          <span style="font-family:var(--mono);font-size:0.7rem;color:rgba(248,244,238,0.4);">Type a word above ↑</span>
+        </div>
+        <label class="order-field-label">Your Email</label>
+        <input type="email" class="order-input" id="l3-email" placeholder="you@example.com">
+        <div class="order-includes">
+          <div class="determines-title">The Author Determines</div>
+          <ul><li>Composition</li><li>Structure</li><li>Artistic Transformation</li></ul>
+          <div class="includes-title">Includes</div>
+          <ul><li>✅ 1 Final Artwork</li><li>✅ High Resolution File</li><li>✅ Magic ChromoWords™ Certificate</li><li>✅ Priority Creation</li></ul>
+        </div>
+        <div class="order-price">$39.99<span> USD</span></div>
+        <div class="paypal-btn-wrap" id="paypal-l3"></div>
+        <div class="order-status" id="status-l3"></div>
+      </div>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="gallery-grid" style="grid-template-columns:repeat(5,1fr);">
+      <div class="gallery-tile"><img src="example1.png" alt="Example 1"><div class="gallery-caption">Lily</div></div>
+      <div class="gallery-tile"><img src="example2.png" alt="Example 2"><div class="gallery-caption">Eli</div></div>
+      <div class="gallery-tile"><img src="example3.png" alt="Example 3"><div class="gallery-caption">Cher</div></div>
+      <div class="gallery-tile"><img src="example4.png" alt="Example 4"><div class="gallery-caption">Liv</div></div>
+      <div class="gallery-tile"><img src="example5.png" alt="Example 5"><div class="gallery-caption">Hen</div></div>
+    </div>
+
+    <div class="order-notes">
+      <p>Your finished artwork will be delivered to your email within <strong>72 hours</strong> of purchase.</p>
+      <p>All fonts used are free for personal &amp; commercial use.</p>
+      <p class="copyright">© Magic ChromoWords™</p>
+    </div>
+  </div>
+</div>
+
+<!-- BOOK -->
+<section id="book">
+  <div class="book-visual">
+    <img src="book1.png" alt="Magic Chromo Words Book Cover">
+  </div>
+  <div>
+    <span class="section-label">The Book</span>
+    <h2>A journey through<br><em>color and identity.</em></h2>
+    <p style="color:var(--muted);font-size:1rem;margin-bottom:2rem;">Discover a world where names become symbols, colors speak in their own language, and imagination is the only currency that matters.</p>
+    <div class="book-accordion">
+      <details>
+        <summary>Book Preview</summary>
+        <div class="accordion-content">
+          <img src="list1.png" alt="Book Preview 1">
+          <img src="list2.png" alt="Book Preview 2">
+        </div>
+      </details>
+      <details>
+        <summary>Rules Preview</summary>
+        <div class="accordion-content">
+          <img src="list3.png" alt="Rules Preview">
+        </div>
+      </details>
+    </div>
+    <div style="margin-top:2rem;">
+      <a href="https://www.etsy.com/shop/supernameartprint" class="btn-primary" target="_blank">Read / Explore</a>
+    </div>
+    <p class="book-copyright">© 2026 Noel Oleon. All Rights Reserved.</p>
+  </div>
+</section>
+
+<!-- STORE -->
+<section id="store" class="full">
+  <div style="background:var(--ink);padding:5rem 1.5rem;">
+    <div class="store-inner">
+      <span class="section-label" style="color:rgba(248,244,238,0.4);">Symbol Store</span>
+      <h2 style="color:var(--parchment);">Physical Manifestations<br><em>of Symbols.</em></h2>
+      <p style="color:rgba(248,244,238,0.55);font-size:1rem;margin-bottom:2.5rem;max-width:480px;">Every object carries a symbol. Every symbol carries a story. Take yours into the world.</p>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-icon">🖼️</div>
+          <div class="product-name">Prints</div>
+          <div class="product-desc">Words become art.</div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">📋</div>
+          <div class="product-name">Posters</div>
+          <div class="product-desc">Words become stories.</div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">👕</div>
+          <div class="product-name">Shirts</div>
+          <div class="product-desc">Words become style.</div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">🏷️</div>
+          <div class="product-name">Stickers</div>
+          <div class="product-desc">Words become fun.</div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">☕</div>
+          <div class="product-name">Mugs</div>
+          <div class="product-desc">Words become part of everyday life.</div>
+        </div>
+      </div>
+      <div style="margin-top:3rem;">
+        <a href="https://supernameartprint.etsy.com" target="_blank" class="btn-outline" style="color:var(--parchment);border-color:rgba(248,244,238,0.3);">Visit the Store — supernameartprint.etsy.com</a>
+      </div>
+      <p class="store-copyright">© Magic ChromoWords™. Original artwork and artistic system. All Rights Reserved.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NFT -->
+<section id="nft">
+  <div>
+    <span class="section-label">Symbolic Identities</span>
+    <h2>Rare digital<br><em>artifacts.</em></h2>
+    <p style="color:var(--muted);font-size:1rem;margin-bottom:2rem;">Unique digital identities inspired by names, symbols, colors, and imagination. Each one unrepeatable. Each one yours.</p>
+    <a href="https://opensea.io/0x4b4cf0c379524e36c725f561c7804d35e14d8a09" target="_blank" class="btn-primary">Explore NFT Collection</a>
+  </div>
+  <div class="nft-visual">
+    <div class="nft-tile"><img src="foto1.png" alt="NFT 1"></div>
+    <div class="nft-tile"><img src="foto2.png" alt="NFT 2"></div>
+    <div class="nft-tile"><img src="foto3.png" alt="NFT 3"></div>
+    <div class="nft-tile"><img src="foto4.png" alt="NFT 4"></div>
+    <div class="nft-tile"><img src="foto5.png" alt="NFT 5"></div>
+    <div class="nft-tile"><img src="foto6.png" alt="NFT 6"></div>
+    <div class="nft-tile"><img src="foto7.png" alt="NFT 7"></div>
+    <div class="nft-tile"><img src="foto8.png" alt="NFT 8"></div>
+    <div class="nft-tile"><img src="foto9.png" alt="NFT 9"></div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section id="social" class="full">
+  <div style="background:var(--pale);padding:5rem 1.5rem;">
+    <div class="social-inner">
+      <span class="section-label" style="display:block;text-align:center;">Connect to the World</span>
+      <h2 style="text-align:center;">Become part of<br><em>the Symbolic World.</em></h2>
+      <p class="social-sub" style="text-align:center;">
+Every action strengthens your connection to the Symbolic World.
+
+Follow. Explore. Participate.
+
+The stronger your connection,
+the stronger the World responds.
+❤️ Like 🔄 Share ⭐ Follow ✨ Participate
+      </p>
+      <div class="social-row">
+        <a href="https://www.instagram.com/magicchromoword/" class="social-pill" target="_blank">Instagram</a>
+        <a href="https://x.com/MagicChromoWord" class="social-pill" target="_blank">X / Twitter</a>
+        <a href="https://www.tiktok.com/@magicchromoword" class="social-pill" target="_blank">TikTok</a>
+        <a href="https://www.youtube.com/@MagicChromoWord" class="social-pill" target="_blank">YouTube</a>
+        <a href="https://ru.pinterest.com/magicchromoword/" class="social-pill" target="_blank">Pinterest</a>
+        <a href="https://t.me/magicchromoword" class="social-pill" target="_blank">Telegram</a>
+        <a href="https://www.threads.com/@magicchromoword" class="social-pill" target="_blank">Threads</a>
+      </div>
+      <div style="margin-top:3rem;text-align:center;">
+        <div class="divider" style="margin-bottom:1.5rem;"></div>
+        <p style="font-style:italic;font-size:1.1rem;color:var(--muted);">magicchromowords.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Magic Chromo Words</div>
+  <div class="footer-tagline">Where Names Become Symbols</div>
+  <ul class="footer-links">
+    <li><a href="https://magicchromowords.com" target="_blank">Website</a></li>
+    <li><a href="https://supernameartprint.etsy.com" target="_blank">Store</a></li>
+    <li><a href="#book">Book</a></li>
+    <li><a href="#nft">NFT</a></li>
+    <li><a href="#" onclick="document.getElementById('faq-overlay').classList.add('active');return false;">FAQ · Terms</a></li>
+  </ul>
+  <div class="rainbow-bar" style="height:3px;max-width:240px;margin:0 auto 2rem;border-radius:2px;"></div>
+  <p class="footer-copy">For those who still believe in wonder.<br>For those who want to bring more color into a world that often feels gray.</p>
+  <p class="footer-main-copy">© 2026 Magic ChromoWords™. All Rights Reserved.</p>
+  <p style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;color:rgba(248,244,238,0.4);margin-top:0.8rem;"><a href="mailto:magicchromoword@gmail.com" style="color:rgba(248,244,238,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--parchment)'" onmouseout="this.style.color='rgba(248,244,238,0.45)'">magicchromoword@gmail.com</a></p>
+</footer>
+
+<script>
+// COUNTDOWN
+function nextFifteenth() {
+  const now = new Date();
+  let d = new Date(now.getFullYear(), now.getMonth(), 15, 15, 15, 0);
+  if (now >= d) d = new Date(now.getFullYear(), now.getMonth()+1, 15, 15, 15, 0);
+  return d;
+}
+function pad(n) { return String(n).padStart(2,'0'); }
+function tick() {
+  const diff = nextFifteenth() - new Date();
+  if (diff <= 0) { setTimeout(tick,1000); return; }
+  document.getElementById('c-days').textContent  = pad(Math.floor(diff/86400000));
+  document.getElementById('c-hours').textContent = pad(Math.floor((diff%86400000)/3600000));
+  document.getElementById('c-mins').textContent  = pad(Math.floor((diff%3600000)/60000));
+}
+tick(); setInterval(tick,60000);
+
+// BACKGROUND COLOR PICKER
+function updateBgColor() {
+  const val = document.getElementById('l3-bgcolor').value;
+  document.getElementById('bgcolor-swatch').style.background = val;
+  document.getElementById('bgcolor-hex').textContent = val;
+}
+
+// FONTS
+const FONT_LIST = [
+  "Montserrat","Bebas Neue","Oswald","Poppins","Raleway",
+  "Playfair Display","Cinzel","Cormorant Garamond","Great Vibes",
+  "Allura","Pacifico","Lobster","Dancing Script","Bungee",
+  "Orbitron","Audiowide","Black Ops One","Permanent Marker","Fredoka","Luckiest Guy"
+];
+function populateFontSelect(id) {
+  const sel = document.getElementById(id);
+  FONT_LIST.forEach(f => {
+    const o = document.createElement('option');
+    o.value = f; o.textContent = f;
+    o.style.fontFamily = `'${f}',sans-serif`;
+    sel.appendChild(o);
+  });
+}
+populateFontSelect('l2-font');
+populateFontSelect('l3-font');
+
+function updatePreview(level) {
+  const word = document.getElementById(level+'-word').value || 'Magic ChromoWords';
+  const font = document.getElementById(level+'-font').value || FONT_LIST[0];
+  const el = document.getElementById(level+'-preview');
+  el.textContent = word;
+  el.style.fontFamily = `'${font}',sans-serif`;
+}
+document.getElementById('l2-word').addEventListener('input',()=>updatePreview('l2'));
+document.getElementById('l3-word').addEventListener('input',()=>updatePreview('l3'));
+document.getElementById('l2-font').addEventListener('change',()=>updatePreview('l2'));
+document.getElementById('l3-font').addEventListener('change',()=>updatePreview('l3'));
+setTimeout(()=>{ updatePreview('l2'); updatePreview('l3'); },100);
+
+// LETTER COLORS
+function generateLetterColors() {
+  const word = document.getElementById('l3-word').value.trim();
+  const wrap = document.getElementById('l3-letter-colors');
+  wrap.innerHTML = '';
+  if (!word) {
+    wrap.innerHTML = '<span style="font-family:var(--mono);font-size:0.7rem;color:rgba(248,244,238,0.4);">Type a word above ↑</span>';
+    return;
+  }
+  const rainbow = ['#FF4040','#FF8C00','#FFD700','#3CB371','#1E90FF','#6A0DAD','#EE82EE'];
+  [...word].forEach((letter,idx) => {
+    const item = document.createElement('div');
+    item.className = 'letter-color-item';
+    const input = document.createElement('input');
+    input.type = 'color';
+    input.id = `l3-lc-${idx}`;
+    input.value = rainbow[idx % rainbow.length];
+    input.dataset.letter = letter;
+    const lbl = document.createElement('span');
+    lbl.textContent = letter === ' ' ? '·' : letter;
+    item.appendChild(input); item.appendChild(lbl);
+    wrap.appendChild(item);
+  });
+}
+
+// GOOGLE SHEET
+const GOOGLE_SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbwGThK9fhwOfxirpy2-rGwyCcZv12ieeTFyrF2DNWRYuVoCq9RjEuJOpCgOI9eb6lJE/exec";
+
+async function sendOrderToSheet(orderData, paypalOrderId) {
+  try {
+    await fetch(GOOGLE_SHEET_ENDPOINT, {
+      method:'POST', mode:'no-cors',
+      headers:{'Content-Type':'text/plain'},
+      body: JSON.stringify({...orderData, paypalOrderId})
+    });
+  } catch(e) { console.error('Sheet error:', e); }
+}
+
+function collectOrderData(level) {
+  const data = {
+    level: level.toUpperCase(),
+    word:  document.getElementById(level+'-word').value.trim(),
+    email: document.getElementById(level+'-email').value.trim(),
+    font:'', background:'', letterColors:'',
+    timestamp: new Date().toISOString()
+  };
+  if (level==='l2'||level==='l3') data.font = document.getElementById(level+'-font').value;
+  if (level==='l3') {
+    data.background = document.getElementById('l3-bgcolor').value;
+    data.letterColors = Array.from(document.querySelectorAll('#l3-letter-colors input[type="color"]'))
+      .map(i=>`${i.dataset.letter}:${i.value}`).join(', ');
+  }
+  return data;
+}
+
+function validateOrder(level) {
+  const word  = document.getElementById(level+'-word').value.trim();
+  const email = document.getElementById(level+'-email').value.trim();
+  if (!word)  { alert('Please enter a word or name.'); return false; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return false; }
+  return true;
+}
+
+// PAYPAL
+const ORDER_PRICES = { l1:'14.99', l2:'24.99', l3:'39.99' };
+
+function renderPaypalButton(level) {
+  if (typeof paypal === 'undefined') {
+    document.getElementById('paypal-'+level).innerHTML =
+      '<p style="font-family:var(--mono);font-size:0.62rem;color:rgba(248,244,238,0.4);text-align:center;margin-top:0.5rem;">PayPal loading…</p>';
+    return;
+  }
+  paypal.Buttons({
+    style: { layout:'horizontal', color:'black', shape:'rect', label:'pay', height:42 },
+    onClick: () => validateOrder(level),
+    createOrder: (data,actions) => actions.order.create({
+      purchase_units:[{
+        description: `Magic ChromoWords™ — ${level.toUpperCase()} — "${document.getElementById(level+'-word').value.trim()}"`,
+        amount:{ value: ORDER_PRICES[level] }
+      }]
+    }),
+    onApprove: (data,actions) => actions.order.capture().then(async () => {
+      const od = collectOrderData(level);
+      await sendOrderToSheet(od, data.orderID);
+      document.getElementById('status-'+level).textContent = '✔ Payment received — your artwork will arrive within 72 hours.';
+    }),
+    onError: err => {
+      console.error(err);
+      document.getElementById('status-'+level).textContent = '⚠ Something went wrong. Please try again.';
+    }
+  }).render('#paypal-'+level);
+}
+
+if (typeof paypal !== 'undefined') {
+  ['l1','l2','l3'].forEach(renderPaypalButton);
+} else {
+  window.addEventListener('load', () => {
+    if (typeof paypal !== 'undefined') ['l1','l2','l3'].forEach(renderPaypalButton);
+    else ['l1','l2','l3'].forEach(l => {
+      document.getElementById('paypal-'+l).innerHTML =
+        '<p style="font-family:var(--mono);font-size:0.6rem;color:rgba(248,244,238,0.35);text-align:center;">PayPal SDK not loaded</p>';
+    });
+  });
+}
+</script>
+</body>
+</html>
