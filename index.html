@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,9 +79,9 @@ nav {
 
 /* HERO */
 .hero {
-  min-height: 100vh; display: flex; flex-direction: column;
+  min-height: 92vh; display: flex; flex-direction: column;
   align-items: center; justify-content: center;
-  text-align: center; padding: 6rem 1.5rem 4rem; position: relative; overflow: hidden;
+  text-align: center; padding: 5rem 1.5rem 3rem; position: relative; overflow: hidden;
 }
 .hero::before {
   content: ''; position: absolute; inset: 0;
@@ -92,32 +93,23 @@ nav {
 }
 .hero-eyebrow {
   font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.22em;
-  text-transform: uppercase; color: var(--muted); margin-bottom: 2rem;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 1.6rem;
   animation: fadeUp 1s ease both;
 }
-.hero-title {
-  font-family: var(--serif); font-size: clamp(2.8rem,8vw,7rem);
-  font-weight: 300; line-height: 1.05; letter-spacing: -0.02em;
-  margin-bottom: 1rem; animation: fadeUp 1s ease 0.1s both;
-}
-.hero-title .accent {
-  font-style: italic;
-  background: linear-gradient(120deg,var(--r) 0%,var(--o) 20%,var(--y) 40%,var(--g) 60%,var(--b) 80%,var(--v) 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
 .hero-brand-rainbow {
-  font-family: var(--serif); font-size: clamp(2rem,6vw,5rem);
-  font-weight: 300; font-style: italic; letter-spacing: 0.06em; margin-bottom: 2rem;
-  animation: fadeUp 1s ease 0.15s both;
+  font-family: var(--serif); font-size: clamp(2.2rem,7vw,5.2rem);
+  font-weight: 300; font-style: italic; letter-spacing: 0.04em; margin-bottom: 1.6rem;
+  animation: fadeUp 1s ease 0.1s both;
   background: linear-gradient(90deg,var(--r) 0%,var(--r) 14%,var(--o) 22%,var(--y) 36%,var(--g) 50%,var(--b) 64%,var(--i) 78%,var(--v) 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-.hero-subtitle {
-  font-size: clamp(1rem,2.5vw,1.2rem); font-weight: 300; font-style: italic;
-  color: var(--muted); max-width: 520px; margin: 0 auto 2.5rem;
-  animation: fadeUp 1s ease 0.2s both;
+.hero-claims { margin-bottom: 2.2rem; animation: fadeUp 1s ease 0.18s both; }
+.hero-claims p {
+  font-family: var(--serif); font-size: clamp(1.1rem,2.8vw,1.55rem);
+  font-weight: 300; line-height: 1.65; color: var(--ink);
 }
-.hero-tagline { font-size: 1rem; color: var(--muted); margin-bottom: 3rem; animation: fadeUp 1s ease 0.25s both; }
+.hero-claims p em { font-style: italic; color: var(--muted); }
+.hero-tagline { font-size: 0.95rem; color: var(--muted); margin-bottom: 2.4rem; animation: fadeUp 1s ease 0.25s both; }
 .btn-primary {
   display: inline-block; font-family: var(--mono); font-size: 0.7rem;
   letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
@@ -133,10 +125,10 @@ nav {
   padding: 0.9rem 2rem; cursor: pointer; transition: transform 0.2s, background 0.2s, color 0.2s;
 }
 .btn-outline:hover { background: var(--ink); color: var(--parchment); transform: translateY(-2px); }
-.prism-wrap { margin: 3rem auto 0; width: 100%; max-width: 380px; opacity: 0.85; animation: fadeUp 1.2s ease 0.5s both; }
+.prism-wrap { margin: 2.2rem auto 0; width: 100%; max-width: 320px; opacity: 0.85; animation: fadeUp 1.2s ease 0.5s both; }
 .divider { width: 60px; height: 1px; background: var(--muted); margin: 0 auto; opacity: 0.4; }
 
-section { max-width: 900px; margin: 0 auto; padding: 5rem 1.5rem; }
+section { max-width: 900px; margin: 0 auto; padding: 4rem 1.5rem; }
 section.full { max-width: 100%; padding: 0; }
 
 .section-label {
@@ -149,11 +141,11 @@ h2 em { font-style: italic; }
 /* COLORS */
 .color-poem p { font-size: 1.1rem; line-height: 2.1; font-weight: 300; color: rgba(248,244,238,0.8); font-style: italic; }
 .color-poem p.highlight { font-size: 1.35rem; font-weight: 400; font-style: normal; color: var(--parchment); margin: 2rem 0 0.5rem; }
-.rainbow-spectrum { display: flex; height: 3px; width: 100%; max-width: 400px; margin: 3rem auto 0; gap: 4px; }
+.rainbow-spectrum { display: flex; height: 3px; width: 100%; max-width: 400px; margin: 2.4rem auto 0; gap: 4px; }
 .rainbow-spectrum span { flex: 1; border-radius: 2px; }
 .eyes-row {
   display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem;
-  margin: 3.5rem auto 0; text-align: left; max-width: 700px;
+  margin: 2.8rem auto 0; text-align: left; max-width: 700px;
 }
 .eye-card { padding: 1.25rem; border: 1px solid rgba(248,244,238,0.12); }
 .eye-card .eye-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
@@ -180,9 +172,9 @@ h2 em { font-style: italic; }
 .archive-list li:last-child { border-bottom: none; }
 .archive-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; margin-right: 0.6rem; }
 
-/* ORDER — distinct dark parchment bg */
+/* ORDER */
 #order-section { background: #1e1b16; }
-.order-inner { max-width: 1100px; margin: 0 auto; padding: 5rem 1.5rem; }
+.order-inner { max-width: 1100px; margin: 0 auto; padding: 4.5rem 1.5rem; }
 .order-heading-rainbow {
   font-family: var(--serif); font-size: clamp(2.2rem,5vw,4rem);
   font-weight: 300; font-style: italic; line-height: 1.1;
@@ -190,7 +182,7 @@ h2 em { font-style: italic; }
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   margin-bottom: 1rem; text-align: center;
 }
-.order-intro-text { text-align: center; color: rgba(248,244,238,0.65); font-size: clamp(1rem,2vw,1.2rem); max-width: 600px; margin: 0 auto 3rem; line-height: 1.8; }
+.order-intro-text { text-align: center; color: rgba(248,244,238,0.65); font-size: clamp(1rem,2vw,1.2rem); max-width: 600px; margin: 0 auto 2.6rem; line-height: 1.8; }
 .order-section-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(248,244,238,0.35); display: block; margin-bottom: 1.2rem; text-align: center; }
 
 .order-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; align-items: stretch; }
@@ -215,7 +207,6 @@ h2 em { font-style: italic; }
   word-break: break-word; color: var(--parchment);
 }
 
-/* Background color picker - improved */
 .bgcolor-row { display: flex; align-items: center; gap: 10px; margin-top: 0.6rem; }
 .bgcolor-swatch {
   width: 38px; height: 38px; border: 2px solid #3a3226; cursor: pointer;
@@ -240,18 +231,19 @@ h2 em { font-style: italic; }
 .paypal-btn-wrap { margin-top: 0.5rem; }
 
 /* Gallery */
-.gallery-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1rem; margin-top: 3rem; }
-.gallery-tile { aspect-ratio: 1; background: #2a251e; border: 1px solid #3a3226; overflow: hidden; position: relative; }
-.gallery-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1rem; margin-top: 2.4rem; }
+.gallery-tile { aspect-ratio: 1; background: #2a251e; border: 1px solid #3a3226; overflow: hidden; position: relative; cursor: pointer; }
+.gallery-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+.gallery-tile:hover img { transform: scale(1.08); }
 .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; color: rgba(248,244,238,0.6); background: rgba(26,22,18,0.8); padding: 0.3rem; }
-.order-notes { margin-top: 3rem; text-align: center; color: rgba(248,244,238,0.5); font-size: 0.85rem; line-height: 1.9; max-width: 640px; margin-left: auto; margin-right: auto; }
+.order-notes { margin-top: 2.4rem; text-align: center; color: rgba(248,244,238,0.5); font-size: 0.85rem; line-height: 1.9; max-width: 640px; margin-left: auto; margin-right: auto; }
 .order-notes strong { color: var(--parchment); }
 .order-notes .copyright { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.06em; margin-top: 1.2rem; color: rgba(248,244,238,0.3); }
 
-/* BOOK */
-#book { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: center; }
+/* BOOK — now hero-priority section */
+#book { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
 .book-visual img { width: 100%; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-.book-accordion { margin-top: 2rem; }
+.book-accordion { margin-top: 1.6rem; }
 .book-accordion details { margin-bottom: 1rem; border-bottom: 1px solid #ddd6c8; padding-bottom: 0.5rem; }
 .book-accordion summary { font-size: 1.1rem; font-weight: 600; font-style: italic; cursor: pointer; margin-bottom: 0.5rem; outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center; }
 .book-accordion summary::-webkit-details-marker { display: none; }
@@ -259,41 +251,41 @@ h2 em { font-style: italic; }
 .book-accordion details[open] summary::after { content: '−'; }
 .book-accordion .accordion-content { padding: 1rem 0; }
 .book-accordion .accordion-content img { width: 100%; max-width: 400px; display: block; margin-bottom: 1rem; border-radius: 4px; border: 1px solid #ddd6c8; }
-.book-copyright { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.06em; color: #a89e8e; margin-top: 1.5rem; }
+.book-copyright { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.06em; color: #a89e8e; margin-top: 1.2rem; }
 
 /* STORE */
 .store-inner { max-width: 900px; margin: 0 auto; }
-.products-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1rem; margin-top: 2.5rem; }
-.product-card { border: 1px solid rgba(248,244,238,0.12); padding: 1.5rem 1rem; text-align: center; transition: border-color 0.2s, transform 0.2s; }
+.products-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1rem; margin-top: 2rem; }
+.product-card { border: 1px solid rgba(248,244,238,0.12); padding: 1.2rem 0.9rem; text-align: center; transition: border-color 0.2s, transform 0.2s; }
 .product-card:hover { border-color: rgba(248,244,238,0.3); transform: translateY(-3px); }
-.product-icon { font-size: 2rem; margin-bottom: 0.6rem; }
-.product-name { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(248,244,238,0.6); }
-.store-copyright { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.06em; color: rgba(248,244,238,0.25); margin-top: 2rem; }
+.product-name { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(248,244,238,0.6); margin-top: 0.6rem; }
+.store-copyright { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.06em; color: rgba(248,244,238,0.25); margin-top: 1.6rem; }
 
 /* NFT */
-#nft { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center; }
+#nft { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
 .nft-visual { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-.nft-tile { aspect-ratio: 1; background: #fff; overflow: hidden; position: relative; border: 1px solid #eee; }
-.nft-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.nft-tile { aspect-ratio: 1; background: #fff; overflow: hidden; position: relative; border: 1px solid #eee; cursor: pointer; }
+.nft-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+.nft-tile:hover img { transform: scale(1.08); }
 
 /* SOCIAL */
 .social-inner { max-width: 600px; margin: 0 auto; }
-.social-sub { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 2.5rem; white-space: pre-line; }
+.social-sub { color: var(--muted); font-size: 1rem; line-height: 1.7; margin-bottom: 2rem; white-space: pre-line; }
 .social-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.8rem; }
 .social-pill { display: inline-block; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--ink); border: 1px solid #bbb0a0; padding: 0.5rem 1rem; transition: background 0.2s, color 0.2s; }
 .social-pill:hover { background: var(--ink); color: var(--parchment); border-color: var(--ink); }
 
 /* FOOTER */
-footer { background: var(--ink); color: rgba(248,244,238,0.5); text-align: center; padding: 3rem 1.5rem; }
+footer { background: var(--ink); color: rgba(248,244,238,0.5); text-align: center; padding: 2.6rem 1.5rem; }
 .footer-logo { font-size: 1.6rem; font-weight: 300; font-style: italic; color: var(--parchment); margin-bottom: 0.5rem; }
-.footer-tagline { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 2rem; }
-.footer-links { display: flex; justify-content: center; gap: 1.5rem; list-style: none; margin-bottom: 2rem; flex-wrap: wrap; }
-.footer-links a { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; color: rgba(248,244,238,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-tagline { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.6rem; }
+.footer-links { display: flex; justify-content: center; gap: 1.5rem; list-style: none; margin-bottom: 1.6rem; flex-wrap: wrap; }
+.footer-links a { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; color: rgba(248,244,238,0.4); text-decoration: none; transition: color 0.2s; cursor: pointer; }
 .footer-links a:hover { color: var(--parchment); }
 .footer-copy { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.08em; }
-.footer-main-copy { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; color: rgba(248,244,238,0.35); margin-top: 1.5rem; }
+.footer-main-copy { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; color: rgba(248,244,238,0.35); margin-top: 1.2rem; }
 
-/* FAQ PAGE overlay */
+/* FAQ overlay */
 .faq-overlay {
   display: none; position: fixed; inset: 0; z-index: 500;
   background: #050403; overflow-y: auto;
@@ -307,27 +299,154 @@ footer { background: var(--ink); color: rgba(248,244,238,0.5); text-align: cente
   padding: 0.5rem 1rem; transition: color 0.2s, border-color 0.2s; z-index: 600;
 }
 .faq-close:hover { color: var(--parchment); border-color: rgba(248,244,238,0.7); }
-.faq-title { font-family: var(--serif); font-size: 2.4rem; font-weight: 300; font-style: italic; color: var(--parchment); margin-bottom: 3rem; }
-.faq-item { margin-bottom: 2.8rem; padding-bottom: 2.8rem; border-bottom: 1px solid rgba(248,244,238,0.1); }
+.faq-title { font-family: var(--serif); font-size: 2.4rem; font-weight: 300; font-style: italic; color: var(--parchment); margin-bottom: 2.5rem; }
+.faq-subtitle { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(248,244,238,0.35); margin: 3rem 0 1.6rem; padding-top: 2rem; border-top: 1px solid rgba(248,244,238,0.1); }
+.faq-item { margin-bottom: 2.4rem; padding-bottom: 2.4rem; border-bottom: 1px solid rgba(248,244,238,0.1); }
 .faq-item:last-child { border-bottom: none; }
-.faq-q { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; font-style: italic; color: var(--y); margin-bottom: 1.2rem; }
+.faq-q { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; font-style: italic; color: var(--y); margin-bottom: 1rem; }
 .faq-en { margin-bottom: 1rem; }
 .faq-en .lang-flag { font-size: 0.9rem; margin-right: 0.4rem; }
-.faq-en p { font-size: 1.1rem; color: rgba(248,244,238,0.9); line-height: 1.9; }
-.faq-ru { margin-top: 0.6rem; }
+.faq-en p { font-size: 1.05rem; color: rgba(248,244,238,0.9); line-height: 1.85; }
+.faq-ru { margin-top: 0.5rem; }
 .faq-ru .lang-flag { font-size: 0.9rem; margin-right: 0.4rem; }
-.faq-ru p { font-size: 1rem; color: rgba(248,244,238,0.6); line-height: 1.9; font-style: italic; }
+.faq-ru p { font-size: 0.95rem; color: rgba(248,244,238,0.55); line-height: 1.85; font-style: italic; }
 
-/* product description */
 .product-desc {
   font-family: var(--serif); font-size: 0.78rem; font-style: italic;
-  color: rgba(248,244,238,0.4); margin-top: 0.4rem; line-height: 1.4;
+  color: rgba(248,244,238,0.4); margin-top: 0.3rem; line-height: 1.4;
 }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* ═══ RAINBOW SPECTRUM ═══ */
+.spectrum-outer {
+  background: #fffdf8;
+  border-top: 1px solid #ebe3d4;
+  border-bottom: 1px solid #ebe3d4;
+}
+.spectrum-inner {
+  max-width: 1000px; margin: 0 auto; padding: 4.5rem 1.5rem; text-align: center;
+}
+.spectrum-label {
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: #a89e8e; display: block; margin-bottom: 1.2rem;
+}
+.spectrum-title {
+  font-family: var(--serif); font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 300;
+  color: var(--ink); margin-bottom: 2.4rem; line-height: 1.2;
+}
+.spectrum-title em { font-style: italic; color: var(--muted); }
+.spectrum-cards {
+  display: grid; grid-template-columns: repeat(7,1fr); gap: 1rem; margin-bottom: 2.8rem;
+}
+.sc-card {
+  background: #fff; padding: 1.4rem 0.7rem; text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.sc-emoji { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.sc-name { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; font-weight: 700; }
+.sc-word { font-family: var(--serif); font-size: 1.05rem; font-style: italic; color: var(--ink); }
+.spectrum-text p {
+  font-size: 1rem; color: var(--muted); line-height: 2; font-style: italic;
+}
+
+/* AUTHOR STORY mobile */
+@media (max-width: 700px) {
+  #author-story > div > div { grid-template-columns: 1fr !important; }
+  .spectrum-cards { grid-template-columns: repeat(4,1fr); }
+}
+@media (max-width: 480px) {
+  .spectrum-cards { grid-template-columns: repeat(3,1fr); }
+}
+
+/* ═══ FROM LIGHT TO SYMBOL ═══ */
+#light-to-symbol { background: linear-gradient(180deg, #0a0a1f 0%, #14102e 55%, #1a1238 100%); position: relative; overflow: hidden; }
+#light-to-symbol::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(2px 2px at 15% 20%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 35% 65%, rgba(255,255,255,0.35), transparent),
+    radial-gradient(2px 2px at 65% 30%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 80% 75%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1.5px 1.5px at 50% 85%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 90% 15%, rgba(255,255,255,0.35), transparent),
+    radial-gradient(1.5px 1.5px at 10% 90%, rgba(255,255,255,0.25), transparent),
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(120,90,220,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.lts-inner { max-width: 720px; margin: 0 auto; padding: 4.5rem 1.5rem; text-align: center; position: relative; z-index: 1; }
+.lts-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(180,190,255,0.5); display: block; margin-bottom: 1.4rem; }
+.lts-title { font-family: var(--serif); font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 300; font-style: italic; color: #f0f0fc; margin-bottom: 2rem; }
+.lts-text p { font-size: 1.05rem; line-height: 1.9; color: rgba(210,212,240,0.75); font-weight: 300; margin-bottom: 0.3rem; }
+.lts-text p.gap { margin-bottom: 1.3rem; }
+.lts-text p.bold { color: #e8e6ff; font-weight: 400; margin: 1.6rem 0 1.6rem; font-size: 1.1rem; }
+.lts-flow {
+  margin-top: 2.2rem; font-family: var(--mono); font-size: 0.85rem;
+  letter-spacing: 0.04em; color: rgba(200,205,245,0.6);
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; align-items: center;
+  position: relative; z-index: 1;
+}
+.lts-flow span.node { color: #f0f0fc; }
+.lts-flow span.arrow {
+  background: linear-gradient(90deg,var(--r),var(--o),var(--y),var(--g),var(--b),var(--i),var(--v));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* ═══ ORIGINAL ARTWORK ═══ */
+#original-artwork { background: var(--pale); }
+.oa-inner { max-width: 720px; margin: 0 auto; padding: 3.6rem 1.5rem; text-align: center; }
+.oa-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 1.2rem; }
+.oa-title { font-family: var(--serif); font-size: clamp(1.6rem,3.5vw,2.4rem); font-weight: 300; margin-bottom: 1.2rem; }
+.oa-text { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 0.5rem; }
+.oa-includes { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 1.8rem; }
+.oa-includes div { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.04em; color: var(--ink); }
+
+/* ═══ PRODUCT MOCKUPS ═══ */
+.mockup-visual {
+  width: 100%; aspect-ratio: 1; border-radius: 6px; margin-bottom: 0.7rem;
+  display: flex; align-items: center; justify-content: center; font-size: 2.2rem;
+  background: linear-gradient(135deg, rgba(248,244,238,0.07), rgba(248,244,238,0.02));
+  border: 1px solid rgba(248,244,238,0.12);
+}
+
+/* ═══ TRUST / CREATOR ═══ */
+#trust { background: var(--ink); }
+.trust-inner { max-width: 480px; margin: 0 auto; padding: 3.6rem 1.5rem; text-align: center; }
+.trust-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(248,244,238,0.35); margin-bottom: 1.2rem; display: block; }
+.trust-name { font-family: var(--serif); font-size: 1.8rem; font-style: italic; font-weight: 300; color: var(--parchment); margin-bottom: 0.4rem; }
+.trust-role { font-family: var(--mono); font-size: 0.7rem; color: rgba(248,244,238,0.5); margin-bottom: 1rem; letter-spacing: 0.04em; }
+.trust-meta { font-family: var(--mono); font-size: 0.65rem; color: rgba(248,244,238,0.35); letter-spacing: 0.08em; }
+
+/* ═══ LEGAL OVERLAY ═══ */
+.legal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 500;
+  background: #050403; overflow-y: auto;
+}
+.legal-overlay.active { display: block; }
+.legal-inner { max-width: 700px; margin: 0 auto; padding: 5rem 2rem 4rem; }
+.legal-title { font-family: var(--serif); font-size: 2rem; font-weight: 300; font-style: italic; color: var(--parchment); margin-bottom: 2.5rem; }
+.legal-inner p { font-size: 1rem; color: rgba(248,244,238,0.75); line-height: 1.9; margin-bottom: 1.4rem; }
+.legal-inner p.final { color: rgba(248,244,238,0.4); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; margin-top: 2rem; }
+
+/* license notes inline */
+.license-note {
+  margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid rgba(248,244,238,0.1);
+  font-family: var(--mono); font-size: 0.62rem; line-height: 1.8; color: rgba(248,244,238,0.35);
+  letter-spacing: 0.02em; text-align: center; max-width: 640px; margin-left: auto; margin-right: auto;
+}
+.license-note.light { color: rgba(13,13,13,0.4); border-top-color: rgba(13,13,13,0.12); }
+
+/* footer legal block */
+.footer-legal {
+  margin-top: 1.6rem; padding-top: 1.6rem; border-top: 1px solid rgba(248,244,238,0.08);
+  font-family: var(--mono); font-size: 0.6rem; line-height: 2; color: rgba(248,244,238,0.3);
+  letter-spacing: 0.03em; max-width: 480px; margin-left: auto; margin-right: auto;
+}
+.footer-legal .flname { color: rgba(248,244,238,0.5); font-family: var(--serif); font-style: italic; font-size: 1rem; margin-bottom: 0.6rem; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
@@ -349,34 +468,73 @@ footer { background: var(--ink); color: rgba(248,244,238,0.5); text-align: cente
   #nft { grid-template-columns: 1fr; }
   #nft .nft-visual { order: -1; }
   .gallery-grid { grid-template-columns: repeat(2,1fr) !important; }
-  .hero { padding: 5rem 1rem 3rem; }
-  section { padding: 4rem 1rem; }
-  .order-inner { padding: 4rem 1rem; }
+  .hero { padding: 4.5rem 1rem 2.5rem; min-height: auto; }
+  section { padding: 3rem 1rem; }
+  .order-inner { padding: 3.2rem 1rem; }
   #book { gap: 2rem; }
   .faq-inner { padding: 5rem 1.2rem 3rem; }
   .faq-title { font-size: 1.8rem; }
   .faq-q { font-size: 1.1rem; }
   .faq-en p, .faq-ru p { font-size: 0.95rem; }
   .btn-primary, .btn-outline { padding: 0.8rem 1.5rem; font-size: 0.65rem; }
+  .lts-inner, .oa-inner, .trust-inner { padding: 3rem 1.2rem; }
+  .oa-includes { gap: 1rem; flex-direction: column; }
 }
 @media (max-width: 480px) {
   .nav-links li:nth-child(n+5) { display: none; }
   .eyes-row { grid-template-columns: 1fr 1fr; }
   .products-grid { grid-template-columns: 1fr 1fr; }
-  .prism-wrap { max-width: 280px; }
+  .prism-wrap { max-width: 260px; }
   .gallery-grid { grid-template-columns: 1fr 1fr !important; }
   .nft-visual { grid-template-columns: 1fr 1fr 1fr; gap: 5px; }
   .count-num { font-size: 1.6rem; }
+  .lts-flow { font-size: 0.7rem; }
 }
 </style>
 </head>
 <body>
-
 <!-- FAQ OVERLAY -->
 <div class="faq-overlay" id="faq-overlay">
   <div class="faq-inner">
     <button class="faq-close" onclick="document.getElementById('faq-overlay').classList.remove('active')">✕ Close</button>
     <div class="faq-title">FAQ · Terms · Common Questions</div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ What is Magic ChromoWords?</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>Magic ChromoWords™ is an artistic system that transforms names and words into symbolic artworks using a rainbow color-sequencing method, where each letter's color and position carry meaning.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ Is every artwork unique?</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>Yes. Each piece is individually hand-crafted by the author. No two compositions are identical, even when the same word is requested twice.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ How long does delivery take?</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>Your finished artwork is delivered to your email within 72 hours of purchase.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ Can I choose colors?</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>At Level III — Premium Collaboration, you can choose the background color and the color of each individual letter. At Levels I and II, color is determined by the artist.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ Can I choose a font?</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>Yes, starting from Level II — Font Choice, you can select from our curated catalogue of 20 fonts. All fonts used are free for personal and commercial use.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ What is included?</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>Every commission includes 1 final artwork, a high-resolution file, and a Magic ChromoWords™ Certificate of Authenticity.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ Do I receive commercial rights?</div>
+      <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>No. Purchasing a commission grants a license for personal use only. Commercial use requires a separate commercial license. Exclusive rights may be purchased separately. Copyright always remains with the author.</p></div>
+    </div>
+
+    <div class="faq-subtitle">Additional Terms</div>
 
     <div class="faq-item">
       <div class="faq-q">❓ Client is not satisfied with the result</div>
@@ -431,6 +589,24 @@ footer { background: var(--ink); color: rgba(248,244,238,0.5); text-align: cente
       <div class="faq-en"><span class="lang-flag">🇺🇸</span><p>The complete Magic ChromoWords™ methodology is not included with artwork purchases and remains protected intellectual property.</p></div>
       <div class="faq-ru"><span class="lang-flag">🇷🇺</span><p>Полная методология Magic ChromoWords™ не входит в стоимость художественных работ и является защищённой интеллектуальной собственностью.</p></div>
     </div>
+
+    <p class="final" style="font-family:var(--mono);font-size:0.7rem;color:rgba(248,244,238,0.4);margin-top:2rem;line-height:1.9;">
+      © 2026 Noel Oleon. All Rights Reserved.<br>
+      Commercial use requires a separate commercial license.<br>
+      Exclusive rights may be purchased separately.
+    </p>
+  </div>
+</div>
+
+<!-- LEGAL OVERLAY -->
+<div class="legal-overlay" id="legal-overlay">
+  <div class="legal-inner">
+    <button class="faq-close" onclick="document.getElementById('legal-overlay').classList.remove('active')">✕ Close</button>
+    <div class="legal-title">Intellectual Property Notice</div>
+    <p>Magic ChromoWords™ is an original artistic and educational project created by Noel Oleon.</p>
+    <p>All original artworks, books, illustrations, symbols, visual systems, concepts, designs, texts, and methodologies presented on this website are protected by copyright and intellectual property laws.</p>
+    <p>No part of this project may be copied, reproduced, distributed, modified, reverse engineered, republished, or used for commercial purposes without written permission from the author.</p>
+    <p class="final">All Rights Reserved.</p>
   </div>
 </div>
 
@@ -442,23 +618,26 @@ footer { background: var(--ink); color: rgba(248,244,238,0.5); text-align: cente
     <span class="nav-logo">Magic Chromo Words</span>
   </div>
   <ul class="nav-links">
-    <li><a href="#order-section">Order</a></li>
-    <li><a href="#colors">Colors</a></li>
-    <li><a href="#world">World</a></li>
     <li><a href="#book">Book</a></li>
+    <li><a href="#order-section">Order</a></li>
+    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#store">Store</a></li>
     <li><a href="#nft">NFT</a></li>
+    <li><a href="#world">World</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
+<!-- HERO — clarified, 3-second comprehension -->
 <div class="hero">
   <p class="hero-eyebrow">A symbolic world of color &amp; imagination</p>
-  <h1 class="hero-title">Where Names<br>Become <em class="accent">Symbols</em></h1>
-  <p class="hero-brand-rainbow">Magic Chromo Words</p>
-  <p class="hero-subtitle">A place for those who still believe in wonder.<br>For those who remember the beauty of a rainbow after the rain.</p>
+  <p class="hero-brand-rainbow">Magic ChromoWords™</p>
+  <div class="hero-claims">
+    <p>Where Light Becomes <em>Color.</em></p>
+    <p>Where Color Becomes <em>Symbol.</em></p>
+    <p>Where Symbols Become <em>Stories.</em></p>
+  </div>
   <p class="hero-tagline">Color is a language of perception.</p>
-  <a href="#colors" class="btn-primary">Discover the Secret of the World</a>
+  <a href="#book" class="btn-primary">Explore the World</a>
   <div class="prism-wrap">
     <svg viewBox="0 0 380 140" xmlns="http://www.w3.org/2000/svg" width="100%">
       <polygon points="190,18 310,122 70,122" fill="none" stroke="#ccc4b4" stroke-width="0.8"/>
@@ -475,117 +654,93 @@ footer { background: var(--ink); color: rgba(248,244,238,0.5); text-align: cente
   </div>
 </div>
 
-<!-- COLORS -->
-<section id="colors" class="full">
-  <div style="background:var(--ink);color:var(--parchment);padding:5rem 1.5rem;">
-    <div style="max-width:640px;margin:0 auto;text-align:center;">
-      <span class="section-label" style="color:rgba(248,244,238,0.4);">The Colors of Magic Chromo Words</span>
-      <h2 style="color:var(--parchment);">Before symbols,<br><em>there was light.</em></h2>
-      <div class="color-poem">
-        <p>A rainbow is one of nature's oldest wonders.</p>
-        <p class="highlight">We did not create colors.</p>
-        <p>We simply learn to see them,<br>feel them,<br>and tell stories through them.</p>
-      </div>
-      <div class="rainbow-spectrum" style="margin-top:2.5rem;">
-        <span style="background:#FF4040;"></span><span style="background:#FF8C00;"></span>
-        <span style="background:#FFD700;"></span><span style="background:#3CB371;"></span>
-        <span style="background:#1E90FF;"></span><span style="background:#6A0DAD;"></span>
-        <span style="background:#EE82EE;"></span>
-      </div>
-      <div class="eyes-row" style="margin-top:3rem;">
-        <div class="eye-card">
-          <div class="eye-icon">👁️</div>
-          <div class="eye-who">Children</div>
-          <div class="eye-see">See wonder.<br>See imagination.<br>See magic.</div>
+<!-- BOOK — first priority, strong CTA -->
+<section id="book">
+  <div class="book-visual">
+    <img src="book1.png" alt="Magic Chromo Words Book Cover">
+  </div>
+  <div>
+    <span class="section-label">The First Book About Magic ChromoWords™</span>
+    <h2>A journey through<br><em>color and identity.</em></h2>
+    <div class="book-features" style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem 1.5rem;margin:1.2rem 0 1.8rem;">
+      <div style="font-size:0.95rem;color:var(--muted);">🌈 Story</div>
+      <div style="font-size:0.95rem;color:var(--muted);">🎨 Art</div>
+      <div style="font-size:0.95rem;color:var(--muted);">✨ Rules</div>
+      <div style="font-size:0.95rem;color:var(--muted);">🧠 Creativity</div>
+      <div style="font-size:0.95rem;color:var(--muted);">🖍 Coloring Pages</div>
+      <div style="font-size:0.95rem;color:var(--muted);">🌍 Multiple Languages</div>
+    </div>
+    <div class="book-accordion">
+      <details>
+        <summary>Book Preview</summary>
+        <div class="accordion-content">
+          <img src="list1.png" alt="Book Preview 1">
+          <img src="list2.png" alt="Book Preview 2">
         </div>
-        <div class="eye-card">
-          <div class="eye-icon">🖌️</div>
-          <div class="eye-who">Artists</div>
-          <div class="eye-see">See inspiration.<br>See new forms.<br>See creativity.</div>
+      </details>
+      <details>
+        <summary>Rules Preview</summary>
+        <div class="accordion-content">
+          <img src="list3.png" alt="Rules Preview">
         </div>
-        <div class="eye-card">
-          <div class="eye-icon">✨</div>
-          <div class="eye-who">Dreamers</div>
-          <div class="eye-see">See hope.<br>See possibilities.<br>See dreams.</div>
+      </details>
+    </div>
+    <div style="margin-top:1.6rem;display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="https://www.etsy.com/shop/supernameartprint" class="btn-primary" target="_blank">Get the Book</a>
+    </div>
+  </div>
+</section>
+<!-- AUTHOR STORY — after book -->
+<section id="author-story" class="full">
+  <div style="background:var(--pale);padding:3.6rem 1.5rem;">
+    <div style="max-width:760px;margin:0 auto;">
+      <span class="section-label">The Story Behind Magic ChromoWords™</span>
+      <h2>A question that<br><em>changed everything.</em></h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;margin-top:2rem;">
+        <div>
+          <p style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:0.8rem;">🇺🇸 English</p>
+          <p style="font-size:1rem;color:var(--muted);line-height:1.9;font-style:italic;margin-bottom:0.8rem;">Magic ChromoWords™ began with a simple question:</p>
+          <p style="font-size:1.1rem;font-weight:400;color:var(--ink);line-height:1.8;margin-bottom:1rem;">What if words could become visual symbols?</p>
+          <p style="font-size:0.95rem;color:var(--muted);line-height:1.9;margin-bottom:0.5rem;">What started as an artistic experiment slowly became a world of colors, stories, and imagination.</p>
+          <p style="font-size:0.95rem;color:var(--muted);line-height:1.9;margin-bottom:1rem;">Years of exploration led to the creation of a symbolic language where names become unique visual identities.</p>
+          <p style="font-family:var(--mono);font-size:0.68rem;color:var(--ink);letter-spacing:0.06em;">Created by Noel Oleon.</p>
         </div>
-        <div class="eye-card">
-          <div class="eye-icon">🔬</div>
-          <div class="eye-who">Scientists</div>
-          <div class="eye-see">See wonder.<br>See patterns.<br>See discovery.</div>
+        <div>
+          <p style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:0.8rem;">🇷🇺 Русский</p>
+          <p style="font-size:1rem;color:var(--muted);line-height:1.9;font-style:italic;margin-bottom:0.8rem;">Magic ChromoWords™ начался с простого вопроса:</p>
+          <p style="font-size:1.1rem;font-weight:400;color:var(--ink);line-height:1.8;margin-bottom:1rem;">Что если слова могут стать визуальными символами?</p>
+          <p style="font-size:0.95rem;color:var(--muted);line-height:1.9;margin-bottom:0.5rem;">То, что начиналось как художественный эксперимент, постепенно превратилось в мир цвета, историй и воображения.</p>
+          <p style="font-size:0.95rem;color:var(--muted);line-height:1.9;margin-bottom:1rem;">Так появилась система, где имена становятся уникальными символами.</p>
+          <p style="font-family:var(--mono);font-size:0.68rem;color:var(--ink);letter-spacing:0.06em;">Создатель — Noel Oleon.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WORLD RESPONSE -->
-<section id="world" class="full">
-  <div style="background:var(--pale);padding:5rem 1.5rem;">
-    <div class="world-inner">
-      <div>
-        <span class="section-label">Monthly World Response</span>
-        <h2>Every 15th of the month at 3:15 p.m.<br><em>The symbolic world of Magic Chromo Words makes its choice.</em></h2>
-        <div class="world-block">
-          <div class="world-block-title">🌍 The World Grows</div>
-          <p>The Symbolic World is built by its residents.</p>
-          <p>Every follower,<br>every book,<br>every symbol,<br>every NFT,<br>every contribution</p>
-          <p>helps the World grow.</p>
-        </div>
-        <div class="world-block-sep">━━━━━━━━━━━━━━</div>
-        <div class="world-block">
-          <div class="world-block-title">🌟 The World Responds</div>
-          <p>Every month the World responds.</p>
-          <p>On the 15th day of each month, at 15:15,</p>
-          <p>one World Resident is randomly selected<br>to receive a <strong>50 USDT</strong> reward.</p>
-        </div>
-        <div class="world-block-sep">━━━━━━━━━━━━━━</div>
-        <div class="world-block">
-          <div class="world-block-title">✨ Connection &amp; Participation</div>
-          <p>Residents strengthen their connection to the Symbolic World through participation, activity, creativity, and support.</p>
-          <p>The stronger the connection,<br>the greater the resident's presence within the World.</p>
-        </div>
-        <div class="world-block-sep">━━━━━━━━━━━━━━</div>
-        <div class="world-block">
-          <div class="world-block-title">📋 Giveaway Rules</div>
-          <p><strong>Prize:</strong> 50 USDT</p>
-          <p><strong>Date:</strong> Every month on the 15th at 15:15 UTC</p>
-          <p><strong>Winner:</strong> Selected at random</p>
-          <p><strong>Entry:</strong> Free to participate</p>
-          <p><strong>Eligibility:</strong> Open worldwide</p>
-          <p><strong>Decision:</strong> Organizer's decision is final</p>
-          <p style="margin-top:0.6rem; font-size:0.8rem;">X, Instagram, Facebook and TikTok are not sponsors or organizers of this promotion.</p>
-        </div>
-        <div class="world-block-sep">━━━━━━━━━━━━━━</div>
-        <div class="world-block">
-          <p style="font-style:italic;font-size:1rem;color:var(--ink);">Together we build the World.</p>
-          <p style="font-style:italic;font-size:1rem;color:var(--ink);">The World remembers.</p>
-          <p style="font-style:italic;font-size:1rem;color:var(--ink);">The World responds.</p>
-        </div>
-        <div class="countdown-grid" id="countdown">
-          <div class="count-cell"><span class="count-num" id="c-days">15</span><span class="count-label">Days</span></div>
-          <div class="count-cell"><span class="count-num" id="c-hours">08</span><span class="count-label">Hours</span></div>
-          <div class="count-cell"><span class="count-num" id="c-mins">12</span><span class="count-label">Minutes</span></div>
-        </div>
-      </div>
-      <div>
-        <span class="section-label">World Archive</span>
-        <div class="winner-card">
-          <div class="winner-label">Latest Winner</div>
-          <div class="winner-name">Name / Symbol</div>
-          <div><span class="winner-badge">Reward Delivered ✔</span></div>
-        </div>
-        <ul class="archive-list">
-          <li><span><span class="archive-dot" style="background:#FF4040;"></span>Month 01</span><span style="font-size:0.58rem;color:var(--muted);">Completed</span></li>
-          <li><span><span class="archive-dot" style="background:#FF8C00;"></span>Month 02</span><span style="font-size:0.58rem;color:var(--muted);">Completed</span></li>
-          <li><span><span class="archive-dot" style="background:#3CB371;"></span>Month 03</span><span style="font-size:0.58rem;color:var(--muted);">Completed</span></li>
-          <li><span><span class="archive-dot" style="background:#1E90FF;"></span>Month 04</span><span style="font-size:0.58rem;color:var(--muted);">Completed</span></li>
-        </ul>
-      </div>
+<!-- FROM LIGHT TO SYMBOL — stronger text -->
+<section id="light-to-symbol" class="full">
+  <div class="lts-inner">
+    <span class="lts-label">From Light to Symbol</span>
+    <div class="lts-title">Before written words,<br>there was color.</div>
+    <div class="lts-text">
+      <p class="gap">From cave paintings to galaxies —<br>color was always the first language.</p>
+      <p>White light contains every color.</p>
+      <p class="gap">A single raindrop reveals the entire spectrum.</p>
+      <p class="bold">From color came symbols.<br>From symbols came stories.<br>From stories came worlds.</p>
+      <p>Magic ChromoWords™ continues that journey.</p>
+    </div>
+    <div class="lts-flow">
+      <span class="node">Light</span><span class="arrow">→</span>
+      <span class="node">Color</span><span class="arrow">→</span>
+      <span class="node">Spectrum</span><span class="arrow">→</span>
+      <span class="node">Symbol</span><span class="arrow">→</span>
+      <span class="node">Story</span>
     </div>
   </div>
 </section>
 
-<!-- ORDER — dark distinct background -->
+<!-- ORDER — right after From Light to Symbol -->
 <div id="order-section">
   <div class="order-inner">
     <span class="order-section-label">Commission Your Symbol</span>
@@ -671,89 +826,178 @@ footer { background: var(--ink); color: rgba(248,244,238,0.5); text-align: cente
       </div>
     </div>
 
-    <!-- GALLERY -->
-    <div class="gallery-grid" style="grid-template-columns:repeat(5,1fr);">
-      <div class="gallery-tile"><img src="example1.png" alt="Example 1"><div class="gallery-caption">Lily</div></div>
-      <div class="gallery-tile"><img src="example2.png" alt="Example 2"><div class="gallery-caption">Eli</div></div>
-      <div class="gallery-tile"><img src="example3.png" alt="Example 3"><div class="gallery-caption">Cher</div></div>
-      <div class="gallery-tile"><img src="example4.png" alt="Example 4"><div class="gallery-caption">Liv</div></div>
-      <div class="gallery-tile"><img src="example5.png" alt="Example 5"><div class="gallery-caption">Hen</div></div>
-    </div>
-
     <div class="order-notes">
       <p>Your finished artwork will be delivered to your email within <strong>72 hours</strong> of purchase.</p>
       <p>All fonts used are free for personal &amp; commercial use.</p>
       <p class="copyright">© Magic ChromoWords™</p>
     </div>
+
+    <p class="license-note">By purchasing a commission, the client receives a license to use the final artwork for personal use only unless otherwise agreed in writing. Copyright remains with the author.</p>
   </div>
 </div>
 
-<!-- BOOK -->
-<section id="book">
-  <div class="book-visual">
-    <img src="book1.png" alt="Magic Chromo Words Book Cover">
+<!-- ORIGINAL ARTWORK -->
+<section id="original-artwork" class="full">
+  <div class="oa-inner">
+    <span class="oa-label">Original Artwork</span>
+    <h3 class="oa-title">Every piece is one of a kind.</h3>
+    <p class="oa-text">Every Magic ChromoWords™ piece is individually created by the author.</p>
+    <p class="oa-text">No two compositions are identical.</p>
+    <div class="oa-includes">
+      <div>✅ Final Artwork</div>
+      <div>✅ High Resolution File</div>
+      <div>✅ Certificate of Authenticity</div>
+    </div>
   </div>
-  <div>
-    <span class="section-label">The Book</span>
-    <h2>A journey through<br><em>color and identity.</em></h2>
-    <p style="color:var(--muted);font-size:1rem;margin-bottom:2rem;">Discover a world where names become symbols, colors speak in their own language, and imagination is the only currency that matters.</p>
-    <div class="book-accordion">
-      <details>
-        <summary>Book Preview</summary>
-        <div class="accordion-content">
-          <img src="list1.png" alt="Book Preview 1">
-          <img src="list2.png" alt="Book Preview 2">
-        </div>
-      </details>
-      <details>
-        <summary>Rules Preview</summary>
-        <div class="accordion-content">
-          <img src="list3.png" alt="Rules Preview">
-        </div>
-      </details>
+</section>
+<!-- GALLERY — expanded -->
+<section id="gallery" class="full">
+  <div style="background:#1e1b16;padding:4rem 1.5rem;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <span class="section-label" style="color:rgba(248,244,238,0.4);text-align:center;display:block;">Gallery</span>
+      <h2 style="color:var(--parchment);text-align:center;">See the <em>symbols</em><br>come to life.</h2>
+      <div class="gallery-grid" id="gallery-grid" style="grid-template-columns:repeat(5,1fr);">
+        <div class="gallery-tile"><img src="example1.png" alt="Lily"><div class="gallery-caption">Lily</div></div>
+        <div class="gallery-tile"><img src="example2.png" alt="Eli"><div class="gallery-caption">Eli</div></div>
+        <div class="gallery-tile"><img src="example3.png" alt="Cher"><div class="gallery-caption">Cher</div></div>
+        <div class="gallery-tile"><img src="example4.png" alt="Liv"><div class="gallery-caption">Liv</div></div>
+        <div class="gallery-tile"><img src="example5.png" alt="Hen"><div class="gallery-caption">Hen</div></div>
+      </div>
     </div>
-    <div style="margin-top:2rem;">
-      <a href="https://www.etsy.com/shop/supernameartprint" class="btn-primary" target="_blank">Read / Explore</a>
-    </div>
-    <p class="book-copyright">© 2026 Noel Oleon. All Rights Reserved.</p>
   </div>
 </section>
 
-<!-- STORE -->
+<!-- RAINBOW SPECTRUM — separate block with own palette (warm white / pastel gradient) -->
+<section id="spectrum" class="full">
+  <div class="spectrum-outer">
+    <div class="spectrum-inner">
+      <span class="spectrum-label">The Rainbow Spectrum</span>
+      <h2 class="spectrum-title">Seven colors.<br><em>Infinite meaning.</em></h2>
+      <div class="spectrum-cards">
+        <div class="sc-card" style="border-top:3px solid #FF4040;">
+          <div class="sc-emoji">🔴</div>
+          <div class="sc-name" style="color:#FF4040;">Red</div>
+          <div class="sc-word">Energy</div>
+        </div>
+        <div class="sc-card" style="border-top:3px solid #FF8C00;">
+          <div class="sc-emoji">🟠</div>
+          <div class="sc-name" style="color:#FF8C00;">Orange</div>
+          <div class="sc-word">Creativity</div>
+        </div>
+        <div class="sc-card" style="border-top:3px solid #DAA520;">
+          <div class="sc-emoji">🟡</div>
+          <div class="sc-name" style="color:#DAA520;">Yellow</div>
+          <div class="sc-word">Joy</div>
+        </div>
+        <div class="sc-card" style="border-top:3px solid #3CB371;">
+          <div class="sc-emoji">🟢</div>
+          <div class="sc-name" style="color:#3CB371;">Green</div>
+          <div class="sc-word">Growth</div>
+        </div>
+        <div class="sc-card" style="border-top:3px solid #1E90FF;">
+          <div class="sc-emoji">🔵</div>
+          <div class="sc-name" style="color:#1E90FF;">Blue</div>
+          <div class="sc-word">Imagination</div>
+        </div>
+        <div class="sc-card" style="border-top:3px solid #6A0DAD;">
+          <div class="sc-emoji">🟣</div>
+          <div class="sc-name" style="color:#6A0DAD;">Indigo</div>
+          <div class="sc-word">Mystery</div>
+        </div>
+        <div class="sc-card" style="border-top:3px solid #CC77CC;">
+          <div class="sc-emoji">💜</div>
+          <div class="sc-name" style="color:#CC77CC;">Violet</div>
+          <div class="sc-word">Wonder</div>
+        </div>
+      </div>
+      <div class="spectrum-text">
+        <p>White light contains every visible color.</p>
+        <p>A rainbow reveals the hidden spectrum.</p>
+        <p>The spectrum reveals the diversity of the universe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLORS — Language of Colors (moved after gallery+spectrum) -->
+<section id="colors" class="full">
+  <div style="background:var(--ink);color:var(--parchment);padding:4rem 1.5rem;">
+    <div style="max-width:640px;margin:0 auto;text-align:center;">
+      <span class="section-label" style="color:rgba(248,244,238,0.4);">The Language of Colors</span>
+      <h2 style="color:var(--parchment);">From cave paintings<br><em>to galaxies.</em></h2>
+      <div class="color-poem">
+        <p>Before alphabets, humans painted with color.</p>
+        <p>Before philosophy, there was the spectrum.</p>
+        <p class="highlight">Color is the oldest language on Earth.</p>
+        <p>Magic ChromoWords™ speaks it fluently.</p>
+      </div>
+      <div class="rainbow-spectrum" style="margin-top:2rem;">
+        <span style="background:#FF4040;"></span><span style="background:#FF8C00;"></span>
+        <span style="background:#FFD700;"></span><span style="background:#3CB371;"></span>
+        <span style="background:#1E90FF;"></span><span style="background:#6A0DAD;"></span>
+        <span style="background:#EE82EE;"></span>
+      </div>
+      <div class="eyes-row" style="margin-top:2.4rem;">
+        <div class="eye-card">
+          <div class="eye-icon">👁️</div>
+          <div class="eye-who">Children</div>
+          <div class="eye-see">See wonder.<br>See imagination.<br>See magic.</div>
+        </div>
+        <div class="eye-card">
+          <div class="eye-icon">🖌️</div>
+          <div class="eye-who">Artists</div>
+          <div class="eye-see">See inspiration.<br>See new forms.<br>See creativity.</div>
+        </div>
+        <div class="eye-card">
+          <div class="eye-icon">✨</div>
+          <div class="eye-who">Dreamers</div>
+          <div class="eye-see">See hope.<br>See possibilities.<br>See dreams.</div>
+        </div>
+        <div class="eye-card">
+          <div class="eye-icon">🔬</div>
+          <div class="eye-who">Scientists</div>
+          <div class="eye-see">See patterns.<br>See connections.<br>See discovery.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORE — with product mockups -->
 <section id="store" class="full">
-  <div style="background:var(--ink);padding:5rem 1.5rem;">
+  <div style="background:var(--ink);padding:4rem 1.5rem;">
     <div class="store-inner">
       <span class="section-label" style="color:rgba(248,244,238,0.4);">Symbol Store</span>
       <h2 style="color:var(--parchment);">Physical Manifestations<br><em>of Symbols.</em></h2>
-      <p style="color:rgba(248,244,238,0.55);font-size:1rem;margin-bottom:2.5rem;max-width:480px;">Every object carries a symbol. Every symbol carries a story. Take yours into the world.</p>
+      <p style="color:rgba(248,244,238,0.55);font-size:1rem;margin-bottom:1.6rem;max-width:480px;">Every object carries a symbol. Every symbol carries a story. Take yours into the world.</p>
       <div class="products-grid">
         <div class="product-card">
-          <div class="product-icon">🖼️</div>
+          <div class="mockup-visual">🖼️</div>
           <div class="product-name">Prints</div>
           <div class="product-desc">Words become art.</div>
         </div>
         <div class="product-card">
-          <div class="product-icon">📋</div>
-          <div class="product-name">Posters</div>
-          <div class="product-desc">Words become stories.</div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">👕</div>
+          <div class="mockup-visual">👕</div>
           <div class="product-name">Shirts</div>
           <div class="product-desc">Words become style.</div>
         </div>
         <div class="product-card">
-          <div class="product-icon">🏷️</div>
+          <div class="mockup-visual">☕</div>
+          <div class="product-name">Mugs</div>
+          <div class="product-desc">Words become everyday.</div>
+        </div>
+        <div class="product-card">
+          <div class="mockup-visual">📒</div>
+          <div class="product-name">Notebooks</div>
+          <div class="product-desc">Words become pages.</div>
+        </div>
+        <div class="product-card">
+          <div class="mockup-visual">🏷️</div>
           <div class="product-name">Stickers</div>
           <div class="product-desc">Words become fun.</div>
         </div>
-        <div class="product-card">
-          <div class="product-icon">☕</div>
-          <div class="product-name">Mugs</div>
-          <div class="product-desc">Words become part of everyday life.</div>
-        </div>
       </div>
-      <div style="margin-top:3rem;">
+      <div style="margin-top:2.4rem;">
         <a href="https://supernameartprint.etsy.com" target="_blank" class="btn-outline" style="color:var(--parchment);border-color:rgba(248,244,238,0.3);">Visit the Store — supernameartprint.etsy.com</a>
       </div>
       <p class="store-copyright">© Magic ChromoWords™. Original artwork and artistic system. All Rights Reserved.</p>
@@ -766,8 +1010,9 @@ footer { background: var(--ink); color: rgba(248,244,238,0.5); text-align: cente
   <div>
     <span class="section-label">Symbolic Identities</span>
     <h2>Rare digital<br><em>artifacts.</em></h2>
-    <p style="color:var(--muted);font-size:1rem;margin-bottom:2rem;">Unique digital identities inspired by names, symbols, colors, and imagination. Each one unrepeatable. Each one yours.</p>
+    <p style="color:var(--muted);font-size:1rem;margin-bottom:1.6rem;">Unique digital identities inspired by names, symbols, colors, and imagination. Each one unrepeatable. Each one yours.</p>
     <a href="https://opensea.io/0x4b4cf0c379524e36c725f561c7804d35e14d8a09" target="_blank" class="btn-primary">Explore NFT Collection</a>
+    <p class="license-note light" style="text-align:left;margin-left:0;margin-top:1.4rem;">Ownership of an NFT does not transfer copyright unless explicitly stated.</p>
   </div>
   <div class="nft-visual">
     <div class="nft-tile"><img src="foto1.png" alt="NFT 1"></div>
@@ -782,21 +1027,60 @@ footer { background: var(--ink); color: rgba(248,244,238,0.5); text-align: cente
   </div>
 </section>
 
-<!-- SOCIAL -->
+<!-- WORLD RESPONSE / GIVEAWAY — moved near the end -->
+<section id="world" class="full">
+  <div style="background:var(--pale);padding:3.6rem 1.5rem;">
+    <div class="world-inner">
+      <div>
+        <span class="section-label">Monthly World Response</span>
+        <h2>Every 15th at 3:15 p.m.<br><em>The Symbolic World makes its choice.</em></h2>
+        <div class="world-block">
+          <div class="world-block-title">🌍 The World Grows</div>
+          <p>Every follower, every book, every symbol, every NFT, every contribution helps the World grow.</p>
+        </div>
+        <div class="world-block-sep">━━━━━━━━━━━━━━</div>
+        <div class="world-block">
+          <div class="world-block-title">🌟 The World Responds</div>
+          <p>On the 15th day of each month, at 15:15, one World Resident is randomly selected to receive a <strong>50 USDT</strong> reward.</p>
+        </div>
+        <div class="world-block-sep">━━━━━━━━━━━━━━</div>
+        <div class="world-block">
+          <div class="world-block-title">📋 Giveaway Rules</div>
+          <p><strong>Prize:</strong> 50 USDT &nbsp;·&nbsp; <strong>Date:</strong> 15th, 15:15 UTC &nbsp;·&nbsp; <strong>Winner:</strong> Random</p>
+          <p><strong>Entry:</strong> Free &nbsp;·&nbsp; <strong>Eligibility:</strong> Worldwide &nbsp;·&nbsp; <strong>Decision:</strong> Final</p>
+          <p style="margin-top:0.5rem; font-size:0.78rem;">X, Instagram, Facebook and TikTok are not sponsors or organizers of this promotion.</p>
+        </div>
+        <div class="countdown-grid" id="countdown">
+          <div class="count-cell"><span class="count-num" id="c-days">15</span><span class="count-label">Days</span></div>
+          <div class="count-cell"><span class="count-num" id="c-hours">08</span><span class="count-label">Hours</span></div>
+          <div class="count-cell"><span class="count-num" id="c-mins">12</span><span class="count-label">Minutes</span></div>
+        </div>
+      </div>
+      <div>
+        <span class="section-label">World Archive</span>
+        <div class="winner-card">
+          <div class="winner-label">Latest Winner</div>
+          <div class="winner-name">Name / Symbol</div>
+          <div><span class="winner-badge">Reward Delivered ✔</span></div>
+        </div>
+        <ul class="archive-list">
+          <li><span><span class="archive-dot" style="background:#FF4040;"></span>Month 01</span><span style="font-size:0.58rem;color:var(--muted);">Completed</span></li>
+          <li><span><span class="archive-dot" style="background:#FF8C00;"></span>Month 02</span><span style="font-size:0.58rem;color:var(--muted);">Completed</span></li>
+          <li><span><span class="archive-dot" style="background:#3CB371;"></span>Month 03</span><span style="font-size:0.58rem;color:var(--muted);">Completed</span></li>
+          <li><span><span class="archive-dot" style="background:#1E90FF;"></span>Month 04</span><span style="font-size:0.58rem;color:var(--muted);">Completed</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL — tightened -->
 <section id="social" class="full">
-  <div style="background:var(--pale);padding:5rem 1.5rem;">
+  <div style="background:var(--pale);padding:3.6rem 1.5rem;">
     <div class="social-inner">
       <span class="section-label" style="display:block;text-align:center;">Connect to the World</span>
       <h2 style="text-align:center;">Become part of<br><em>the Symbolic World.</em></h2>
-      <p class="social-sub" style="text-align:center;">
-Every action strengthens your connection to the Symbolic World.
-
-Follow. Explore. Participate.
-
-The stronger your connection,
-the stronger the World responds.
-❤️ Like 🔄 Share ⭐ Follow ✨ Participate
-      </p>
+      <p class="social-sub" style="text-align:center;">Follow. Explore. Participate.<br>❤️ Like 🔄 Share ⭐ Follow ✨ Participate</p>
       <div class="social-row">
         <a href="https://www.instagram.com/magicchromoword/" class="social-pill" target="_blank">Instagram</a>
         <a href="https://x.com/MagicChromoWord" class="social-pill" target="_blank">X / Twitter</a>
@@ -806,11 +1090,21 @@ the stronger the World responds.
         <a href="https://t.me/magicchromoword" class="social-pill" target="_blank">Telegram</a>
         <a href="https://www.threads.com/@magicchromoword" class="social-pill" target="_blank">Threads</a>
       </div>
-      <div style="margin-top:3rem;text-align:center;">
-        <div class="divider" style="margin-bottom:1.5rem;"></div>
-        <p style="font-style:italic;font-size:1.1rem;color:var(--muted);">magicchromowords.com</p>
+      <div style="margin-top:2rem;text-align:center;">
+        <div class="divider" style="margin-bottom:1.2rem;"></div>
+        <p style="font-style:italic;font-size:1.05rem;color:var(--muted);">magicchromowords.com</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- TRUST / CREATOR -->
+<section id="trust" class="full">
+  <div class="trust-inner">
+    <span class="trust-label">Creator</span>
+    <div class="trust-name">Noel Oleon</div>
+    <div class="trust-role">Creator of Magic ChromoWords™</div>
+    <div class="trust-meta">Ukraine · Since 2026</div>
   </div>
 </section>
 
@@ -818,18 +1112,26 @@ the stronger the World responds.
   <div class="footer-logo">Magic Chromo Words</div>
   <div class="footer-tagline">Where Names Become Symbols</div>
   <ul class="footer-links">
-    <li><a href="https://magicchromowords.com" target="_blank">Website</a></li>
-    <li><a href="https://supernameartprint.etsy.com" target="_blank">Store</a></li>
     <li><a href="#book">Book</a></li>
+    <li><a href="https://supernameartprint.etsy.com" target="_blank">Store</a></li>
     <li><a href="#nft">NFT</a></li>
     <li><a href="#" onclick="document.getElementById('faq-overlay').classList.add('active');return false;">FAQ · Terms</a></li>
+    <li><a href="#" onclick="document.getElementById('legal-overlay').classList.add('active');return false;">Legal</a></li>
   </ul>
-  <div class="rainbow-bar" style="height:3px;max-width:240px;margin:0 auto 2rem;border-radius:2px;"></div>
+  <div class="rainbow-bar" style="height:3px;max-width:240px;margin:0 auto 1.6rem;border-radius:2px;"></div>
   <p class="footer-copy">For those who still believe in wonder.<br>For those who want to bring more color into a world that often feels gray.</p>
   <p class="footer-main-copy">© 2026 Magic ChromoWords™. All Rights Reserved.</p>
-  <p style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;color:rgba(248,244,238,0.4);margin-top:0.8rem;"><a href="mailto:magicchromoword@gmail.com" style="color:rgba(248,244,238,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--parchment)'" onmouseout="this.style.color='rgba(248,244,238,0.45)'">magicchromoword@gmail.com</a></p>
-</footer>
+  <p style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;color:rgba(248,244,238,0.4);margin-top:0.7rem;"><a href="mailto:magicchromoword@gmail.com" style="color:rgba(248,244,238,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--parchment)'" onmouseout="this.style.color='rgba(248,244,238,0.45)'">magicchromoword@gmail.com</a></p>
 
+  <div class="footer-legal">
+    <div class="flname">Magic ChromoWords™</div>
+    <div>Created by Noel Oleon</div>
+    <div style="margin-top:0.8rem;">
+      All artwork, symbols, visual systems, texts, illustrations, concepts, methods, designs and original content are protected by copyright and intellectual property law.
+    </div>
+    <div style="margin-top:0.8rem;">All Rights Reserved.</div>
+  </div>
+</footer>
 <script>
 // COUNTDOWN
 function nextFifteenth() {
@@ -991,6 +1293,23 @@ if (typeof paypal !== 'undefined') {
     });
   });
 }
+
+// SIMPLE LIGHTBOX for gallery & NFT images
+(function() {
+  const lb = document.createElement('div');
+  lb.id = 'lightbox';
+  lb.style.cssText = 'display:none;position:fixed;inset:0;z-index:900;background:rgba(5,4,3,0.94);align-items:center;justify-content:center;cursor:zoom-out;padding:2rem;';
+  lb.innerHTML = '<img style="max-width:90vw;max-height:85vh;object-fit:contain;border-radius:4px;" id="lightbox-img">';
+  document.body.appendChild(lb);
+  lb.addEventListener('click', () => { lb.style.display = 'none'; });
+
+  document.querySelectorAll('.gallery-tile img, .nft-tile img').forEach(img => {
+    img.parentElement.addEventListener('click', () => {
+      document.getElementById('lightbox-img').src = img.src;
+      lb.style.display = 'flex';
+    });
+  });
+})();
 </script>
 </body>
 </html>
